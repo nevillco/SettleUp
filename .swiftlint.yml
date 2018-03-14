@@ -1,0 +1,30 @@
+
+disabled_rules:
+- cyclomatic_complexity
+- file_length
+- function_body_length
+- function_parameter_count
+- line_length
+- statement_position
+- type_body_length
+- type_name
+
+opt_in_rules:
+- empty_count
+- force_unwrapping
+
+included:
+- SettleUp
+
+excluded:
+- Pods
+- SettleUp/Resources
+- SettleUp/Generated
+
+## Configurable options
+force_cast: warning
+empty_count: warning
+identifier_name:
+    min_length: 2
+trailing_comma:
+    mandatory_comma: true
