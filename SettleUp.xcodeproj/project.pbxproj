@@ -11,6 +11,7 @@
 		2D7F8A812059655500D3E69D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D7F8A802059655500D3E69D /* Assets.xcassets */; };
 		2D7F8A842059655500D3E69D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D7F8A822059655500D3E69D /* LaunchScreen.storyboard */; };
 		2D7F8A8F20598FCB00D3E69D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F8A8E20598FCB00D3E69D /* RootViewController.swift */; };
+		F023D5C82D2DAA0F6B66AC5A /* Pods_SettleUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91F3BBB9D2009654C5F3FD9 /* Pods_SettleUp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,9 @@
 		2D7F8A832059655500D3E69D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D7F8A852059655500D3E69D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D7F8A8E20598FCB00D3E69D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		AD12B6A1F52EF5EA0A69E9B6 /* Pods-SettleUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettleUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SettleUp/Pods-SettleUp.release.xcconfig"; sourceTree = "<group>"; };
+		C91F3BBB9D2009654C5F3FD9 /* Pods_SettleUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SettleUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE45F6DAAA122AD6A6D5860 /* Pods-SettleUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettleUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SettleUp/Pods-SettleUp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +31,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F023D5C82D2DAA0F6B66AC5A /* Pods_SettleUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13942127BD73C8C0B02BEA90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FEE45F6DAAA122AD6A6D5860 /* Pods-SettleUp.debug.xcconfig */,
+				AD12B6A1F52EF5EA0A69E9B6 /* Pods-SettleUp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2D7F8A722059655500D3E69D = {
 			isa = PBXGroup;
 			children = (
 				2D7F8A7D2059655500D3E69D /* SettleUp */,
 				2D7F8A7C2059655500D3E69D /* Products */,
+				13942127BD73C8C0B02BEA90 /* Pods */,
+				CD67E1734DA766CB14A94EE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +101,14 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		CD67E1734DA766CB14A94EE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C91F3BBB9D2009654C5F3FD9 /* Pods_SettleUp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,9 +116,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D7F8A882059655500D3E69D /* Build configuration list for PBXNativeTarget "SettleUp" */;
 			buildPhases = (
+				198BD539E0785EC733F905E3 /* [CP] Check Pods Manifest.lock */,
 				2D7F8A772059655500D3E69D /* Sources */,
 				2D7F8A782059655500D3E69D /* Frameworks */,
 				2D7F8A792059655500D3E69D /* Resources */,
+				070C7B90B0DA662EA7C3C1DC /* [CP] Embed Pods Frameworks */,
+				792B68DD1F2B0DAFE203A8E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -150,6 +177,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		070C7B90B0DA662EA7C3C1DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SettleUp/Pods-SettleUp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Anchorage/Anchorage.framework",
+				"${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anchorage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BonMot.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SettleUp/Pods-SettleUp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		198BD539E0785EC733F905E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SettleUp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		792B68DD1F2B0DAFE203A8E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SettleUp/Pods-SettleUp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2D7F8A772059655500D3E69D /* Sources */ = {
@@ -284,6 +367,7 @@
 		};
 		2D7F8A892059655500D3E69D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEE45F6DAAA122AD6A6D5860 /* Pods-SettleUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +383,7 @@
 		};
 		2D7F8A8A2059655500D3E69D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD12B6A1F52EF5EA0A69E9B6 /* Pods-SettleUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
