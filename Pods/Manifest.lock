@@ -1,21 +1,24 @@
 PODS:
   - Anchorage (4.2.1)
   - BonMot (5.0.1)
+  - Reinstate (0.1.0)
   - Sourcery (0.10.1)
   - SwiftLint (0.25.0)
 
 DEPENDENCIES:
   - Anchorage
   - BonMot
+  - Reinstate
   - Sourcery
   - SwiftLint
 
 SPEC CHECKSUMS:
   Anchorage: f4dbf32771115b8ef9c9cc4e55a002ad87711f48
   BonMot: f61b678e2fe8a7591d93d854795bc047fc3a189f
+  Reinstate: 92c38cf37ae9eae3e2a47c0224bddb432f9638f1
   Sourcery: ac71ac4d490f62fd381a9f3b558f3093d91bddd5
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: ac0bf4a0dc90a38a580984c22e04ee8ad3095d0b
+PODFILE CHECKSUM: ae3ea2e3fa021fba092b8cdfbf2506eb75e014d8
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0

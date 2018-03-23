@@ -5,6 +5,7 @@ target 'SettleUp' do
 
   pod 'Anchorage'
   pod 'BonMot'
+  pod 'Reinstate'
   pod 'Sourcery'
   pod 'SwiftLint'
 
