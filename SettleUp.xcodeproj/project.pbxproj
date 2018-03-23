@@ -15,7 +15,7 @@
 		2DD7749D20652C5700DF05D1 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD7749C20652C5700DF05D1 /* categories.json */; };
 		2DE9CE82206428AC001AD739 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9CE81206428AC001AD739 /* Rule.swift */; };
 		2DE9CE8820642B37001AD739 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9CE8720642B37001AD739 /* Category.swift */; };
-		2DE9CE8B20642BB4001AD739 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9CE8A20642BB4001AD739 /* CategoryService.swift */; };
+		2DE9CE8B20642BB4001AD739 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9CE8A20642BB4001AD739 /* DataService.swift */; };
 		F023D5C82D2DAA0F6B66AC5A /* Pods_SettleUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91F3BBB9D2009654C5F3FD9 /* Pods_SettleUp.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		2DD7749C20652C5700DF05D1 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		2DE9CE81206428AC001AD739 /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		2DE9CE8720642B37001AD739 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		2DE9CE8A20642BB4001AD739 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+		2DE9CE8A20642BB4001AD739 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		AD12B6A1F52EF5EA0A69E9B6 /* Pods-SettleUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettleUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SettleUp/Pods-SettleUp.release.xcconfig"; sourceTree = "<group>"; };
 		C91F3BBB9D2009654C5F3FD9 /* Pods_SettleUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SettleUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE45F6DAAA122AD6A6D5860 /* Pods-SettleUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettleUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SettleUp/Pods-SettleUp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		2DE9CE8920642BA3001AD739 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				2DE9CE8A20642BB4001AD739 /* CategoryService.swift */,
+				2DE9CE8A20642BB4001AD739 /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DD7749B20652AD800DF05D1 /* Result.swift in Sources */,
-				2DE9CE8B20642BB4001AD739 /* CategoryService.swift in Sources */,
+				2DE9CE8B20642BB4001AD739 /* DataService.swift in Sources */,
 				2DE9CE82206428AC001AD739 /* Rule.swift in Sources */,
 				2D7F8A8F20598FCB00D3E69D /* RootViewController.swift in Sources */,
 				2D7F8A7F2059655500D3E69D /* AppDelegate.swift in Sources */,

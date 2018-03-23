@@ -8,18 +8,6 @@
 
 import Foundation
 
-private extension FileManager {
-
-    var documentsDirectory: URL {
-        let directories = urls(for: .documentDirectory, in: .userDomainMask)
-        guard let directory = directories.first else {
-            fatalError("Couldn’t get the documents directory for the current user")
-        }
-        return directory
-    }
-
-}
-
 final class DataService {
 
     private static let dataFileName = "categories"
@@ -53,7 +41,7 @@ final class DataService {
             case .none:
                 do {
                     let data = try Data(contentsOf: self.documentsFileURL)
-                    let categories = try JSONDecoder().decode(Array<Category>.self, from: data)
+                    let categories = try JSONDecoder().decode([Category].self, from: data)
                     completion(.success(categories))
                 }
                 catch let error {
@@ -76,6 +64,18 @@ final class DataService {
         catch let error {
             completion(error)
         }
+    }
+
+}
+
+private extension FileManager {
+
+    var documentsDirectory: URL {
+        let directories = urls(for: .documentDirectory, in: .userDomainMask)
+        guard let directory = directories.first else {
+            fatalError("Couldn’t get the documents directory for the current user")
+        }
+        return directory
     }
 
 }

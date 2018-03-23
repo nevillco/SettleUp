@@ -14,6 +14,5 @@ struct Rule: Codable {
     let description: String
     let detailedDescription: String?
     let exclusiveRuleIDs: [String]
-    let categoryID: String
 
 }
