@@ -1,3 +1,5 @@
+// sourcery:file:Actionable+Generated.swift
+
 <%
 func variableName(fromTypeName typeName: String) -> String {
 if typeName.hasSuffix("Coordinator") { return "coordinator" }
@@ -58,3 +60,5 @@ delegate?.<%= lowerFirstTypeName %>(self, didNotify: action)
 
 }
 <% } -%>
+
+// sourcery:end
