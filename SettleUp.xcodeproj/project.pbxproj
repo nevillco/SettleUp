@@ -330,7 +330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = $PODS_ROOT/Sourcery/bin/sourcery;
+			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\" --config 'sourcery.yml'";
 		};
 		2D7F8A902059960600D3E69D /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -344,7 +344,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --config 'swiftlint.yml'";
 		};
 		792B68DD1F2B0DAFE203A8E4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

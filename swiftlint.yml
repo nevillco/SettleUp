@@ -4,6 +4,7 @@ disabled_rules:
 - file_length
 - function_body_length
 - function_parameter_count
+- identifier_name
 - line_length
 - statement_position
 - type_body_length
@@ -24,7 +25,6 @@ excluded:
 ## Configurable options
 force_cast: warning
 empty_count: warning
-identifier_name:
-    min_length: 2
 trailing_comma:
-    mandatory_comma: true
+mandatory_comma: true
+

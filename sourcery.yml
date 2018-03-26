@@ -1,0 +1,6 @@
+sources:
+- SettleUp/
+templates:
+- SettleUp/Resources/Sourcery/
+output:
+    SettleUp/Generated/
