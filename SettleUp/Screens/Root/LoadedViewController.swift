@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  LoadedViewController.swift
 //  SettleUp
 //
 //  Created by Connor Neville on 3/26/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+final class LoadedViewController: UIViewController {
 
     fileprivate let categories: [Category]
     fileprivate let homeController: HomeViewController
