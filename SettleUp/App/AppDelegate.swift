@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configureWindow()
-        loadCategories()
         return true
     }
 
@@ -29,12 +28,6 @@ private extension AppDelegate {
         window.rootViewController = RootViewController()
         window.makeKeyAndVisible()
         self.window = window
-    }
-
-    func loadCategories() {
-        DataService().fetchData { result in
-            print(result)
-        }
     }
 
 }
