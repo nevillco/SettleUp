@@ -33,8 +33,11 @@ final class DataService {
     }
 
     typealias DataFetchCompletion = (Result<[Category]>) -> Void
-    func fetchData(completion: @escaping DataFetchCompletion) {
-        initializeDocumentsFileIfNecessary { initializationError in
+    func fetchData(shouldForceInitialize: Bool = false,
+                   completion: @escaping DataFetchCompletion) {
+        let initializationFunction = shouldForceInitialize ?
+            self.initializeDocumentsFileIfNecessary : self.forceInitializeDocumentsFile
+        initializationFunction { initializationError in
             switch initializationError {
             case let .some(error):
                 completion(.failure(error))
@@ -56,6 +59,25 @@ final class DataService {
         guard !documentsFileExists else {
             completion(nil)
             return
+        }
+        do {
+            try FileManager.default.copyItem(at: bundleFileURL, to: documentsFileURL)
+            completion(nil)
+        }
+        catch let error {
+            completion(error)
+        }
+    }
+
+    private func forceInitializeDocumentsFile(completion: @escaping DocumentsInitializationCompletion) {
+        if documentsFileExists {
+            do {
+                try FileManager.default.removeItem(at: documentsFileURL)
+            }
+            catch let error {
+                completion(error)
+                return
+            }
         }
         do {
             try FileManager.default.copyItem(at: bundleFileURL, to: documentsFileURL)

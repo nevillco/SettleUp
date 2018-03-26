@@ -5,3 +5,9 @@
   Created by Connor Neville on 3/26/18.
   Copyright © 2018 Connor Neville. All rights reserved.
 */
+
+"Loading.Error_Alert.title" = "Error Loading Data";
+"Loading.Error_Alert.message" = "There was an error, and we weren’t able to load your SettleUp rules. Tap below to retry.";
+"Loading.Error_Alert.retry" = "Retry";
+"Loading.Error_Alert.forceRetry" = "Clear Custom Data and Retry";
+"Loading.Error_Alert.cancel" = "Cancel";
