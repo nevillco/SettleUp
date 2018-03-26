@@ -50,8 +50,9 @@ extension RootViewController {
             let vc = LoadingViewController()
             vc.delegate = self
             return vc
-        case .loaded:
-            return UIViewController()
+        case .loaded(let categories):
+            let vc = MainViewController(categories: categories)
+            return vc
         }
     }
 
