@@ -2,6 +2,11 @@ PODS:
   - Anchorage (4.2.1)
   - BonMot (5.2)
   - Reinstate (0.1.0)
+  - Reusable (4.0.2):
+    - Reusable/Storyboard (= 4.0.2)
+    - Reusable/View (= 4.0.2)
+  - Reusable/Storyboard (4.0.2)
+  - Reusable/View (4.0.2)
   - Sourcery (0.10.1)
   - SwiftGen (5.3.0)
   - SwiftLint (0.25.0)
@@ -10,6 +15,7 @@ DEPENDENCIES:
   - Anchorage
   - BonMot
   - Reinstate
+  - Reusable
   - Sourcery
   - SwiftGen
   - SwiftLint
@@ -18,10 +24,11 @@ SPEC CHECKSUMS:
   Anchorage: f4dbf32771115b8ef9c9cc4e55a002ad87711f48
   BonMot: 68da0bd7c2f602aca85511bedabd211eb0fae666
   Reinstate: 92c38cf37ae9eae3e2a47c0224bddb432f9638f1
+  Reusable: 584a5629747c52e0f6a77841b400dc2643f6fa0f
   Sourcery: ac71ac4d490f62fd381a9f3b558f3093d91bddd5
   SwiftGen: 4379bd3640b0a212a0f6ea3c494adba385513d10
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
 
-PODFILE CHECKSUM: 2497b18d80370aa323013fb613b44cb729caf879
+PODFILE CHECKSUM: 5a51449ea96f798223441bf908f81f84b771996e
 
 COCOAPODS: 1.4.0

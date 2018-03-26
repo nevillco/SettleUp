@@ -7,6 +7,7 @@ target 'SettleUp' do
   pod 'Anchorage'
   pod 'BonMot'
   pod 'Reinstate'
+  pod 'Reusable'
   pod 'Sourcery'
   pod 'SwiftGen'
   pod 'SwiftLint'
