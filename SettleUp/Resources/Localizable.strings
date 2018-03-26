@@ -11,3 +11,5 @@
 "Loading.Error_Alert.retry" = "Retry";
 "Loading.Error_Alert.forceRetry" = "Clear Custom Data and Retry";
 "Loading.Error_Alert.cancel" = "Cancel";
+
+"Home.title" = "SettleUp";

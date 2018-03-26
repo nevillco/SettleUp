@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  HomeViewController.swift
 //  SettleUp
 //
 //  Created by Connor Neville on 3/26/18.
@@ -8,16 +8,12 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     fileprivate let categories: [Category]
-    fileprivate let homeController: HomeViewController
-    fileprivate let navController: UINavigationController
 
     init(categories: [Category]) {
         self.categories = categories
-        self.homeController = HomeViewController(categories: categories)
-        self.navController = UINavigationController(rootViewController: homeController)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -27,7 +23,7 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addChild(navController)
+        title = L10n.Home.title
     }
 
 }
