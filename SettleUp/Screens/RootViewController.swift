@@ -59,8 +59,11 @@ extension RootViewController {
 
 extension RootViewController: LoadingViewControllerDelegate {
 
-    func loadingViewControllerDidFetchCategories(_ categories: [Category]) {
-        transition(to: .loaded(categories))
+    func loadingViewController(_ vc: LoadingViewController, didNotify action: LoadingViewController.Action) {
+        switch action {
+        case .didFetch(let categories):
+            transition(to: .loaded(categories))
+        }
     }
 
 }

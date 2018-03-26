@@ -8,16 +8,10 @@
 
 import UIKit
 
-protocol LoadingViewControllerDelegate: class {
-
-    func loadingViewControllerDidFetchCategories(_ categories: [Category])
-
-}
-
 final class LoadingViewController: UIViewController {
 
     fileprivate let dataService = DataService()
-    weak var delegate: LoadingViewControllerDelegate?
+    weak var delegate: Delegate?
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -28,12 +22,20 @@ final class LoadingViewController: UIViewController {
 
 }
 
+extension LoadingViewController: Actionable {
+
+    enum Action {
+        case didFetch([Category])
+    }
+
+}
+
 private extension LoadingViewController {
 
     func handleFetchResult(_ result: Result<[Category]>) {
         switch result {
         case .success(let categories):
-            self.delegate?.loadingViewControllerDidFetchCategories(categories)
+            notify(.didFetch(categories))
         case .failure(let error):
             self.handleFailure(error)
         }
