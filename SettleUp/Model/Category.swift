@@ -15,7 +15,7 @@ struct Category: Codable, Equatable {
     let description: String
     let rules: [Rule]
 
-    static func ==(lhs: Category, rhs: Category) -> Bool {
+    static func == (lhs: Category, rhs: Category) -> Bool {
         return lhs.id == rhs.id
     }
 
