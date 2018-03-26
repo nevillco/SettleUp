@@ -5,6 +5,7 @@ func variableName(fromTypeName typeName: String) -> String {
 if typeName.hasSuffix("Coordinator") { return "coordinator" }
 else if typeName.hasSuffix("ViewController") { return "vc" }
 else if typeName.hasSuffix("View") { return "view" }
+else if typeName.hasSuffix("Cell") { return "cell" }
 else { return "component" }
 }
 

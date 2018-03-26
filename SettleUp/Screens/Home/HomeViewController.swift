@@ -7,11 +7,13 @@
 //
 
 import Anchorage
+import Reusable
 
 final class HomeViewController: UIViewController {
 
     fileprivate let categories: [Category]
     fileprivate let tableView = UITableView()
+    fileprivate var childControllers: [Int: UIViewController] = [:]
 
     init(categories: [Category]) {
         self.categories = categories
@@ -26,7 +28,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         title = L10n.Home.title
 
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(cellType: ReuseNotifyingCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
@@ -44,7 +46,32 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: ReuseNotifyingCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.delegate = self
+        cell.indexPath = indexPath
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let category = categories[indexPath.row]
+        let controller = HomeCellViewController(category: category)
+        childControllers[indexPath.row] = controller
+        addChild(controller, constrainedTo: cell)
+    }
+
+}
+
+extension HomeViewController: ReuseNotifyingCellDelegate {
+
+    func reuseNotifyingCell(_ cell: ReuseNotifyingCell, didNotify action: ReuseNotifyingCell.Action) {
+        switch action {
+        case .preparedForReuse(let indexPath):
+            guard let controller = childControllers[indexPath.row] else {
+                fatalError("Missing child controller for index path \(indexPath)")
+            }
+            removeChild(controller, constrainedTo: cell)
+            childControllers[indexPath.row] = nil
+        }
     }
 
 }
