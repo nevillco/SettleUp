@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2D26888820692A010036DB46 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D26888720692A010036DB46 /* LoadingViewController.swift */; };
+		2D26888A20692EC00036DB46 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D26888920692EC00036DB46 /* Localizable.strings */; };
+		2D26888F20692FFD0036DB46 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D26888D20692FFD0036DB46 /* Images.swift */; };
+		2D26889020692FFD0036DB46 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D26888E20692FFD0036DB46 /* Strings.swift */; };
 		2D7F8A7F2059655500D3E69D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F8A7E2059655500D3E69D /* AppDelegate.swift */; };
 		2D7F8A812059655500D3E69D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D7F8A802059655500D3E69D /* Assets.xcassets */; };
 		2D7F8A842059655500D3E69D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D7F8A822059655500D3E69D /* LaunchScreen.storyboard */; };
@@ -22,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		2D26888720692A010036DB46 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		2D26888920692EC00036DB46 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		2D26888D20692FFD0036DB46 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		2D26888E20692FFD0036DB46 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		2D7F8A7B2059655500D3E69D /* SettleUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettleUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D7F8A7E2059655500D3E69D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D7F8A802059655500D3E69D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +65,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2D26888C20692FE00036DB46 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				2D26888D20692FFD0036DB46 /* Images.swift */,
+				2D26888E20692FFD0036DB46 /* Strings.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		2D7F8A722059655500D3E69D = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +97,7 @@
 			children = (
 				2D7F8A8B20598F5400D3E69D /* App */,
 				2DE9CE802064289D001AD739 /* Model */,
+				2D26888C20692FE00036DB46 /* Generated */,
 				2D7F8A8C20598F5900D3E69D /* Resources */,
 				2D7F8A8D20598F9600D3E69D /* Screens */,
 				2DE9CE8920642BA3001AD739 /* Services */,
@@ -105,6 +121,7 @@
 				2D7F8A802059655500D3E69D /* Assets.xcassets */,
 				2D7F8A822059655500D3E69D /* LaunchScreen.storyboard */,
 				2DD7749C20652C5700DF05D1 /* categories.json */,
+				2D26888920692EC00036DB46 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -160,6 +177,7 @@
 			buildPhases = (
 				198BD539E0785EC733F905E3 /* [CP] Check Pods Manifest.lock */,
 				2D7F8A902059960600D3E69D /* SwiftLint */,
+				2D26888B20692EDB0036DB46 /* SwiftGen strings */,
 				2D7F8A772059655500D3E69D /* Sources */,
 				2D7F8A782059655500D3E69D /* Frameworks */,
 				2D7F8A792059655500D3E69D /* Resources */,
@@ -215,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D7F8A812059655500D3E69D /* Assets.xcassets in Resources */,
+				2D26888A20692EC00036DB46 /* Localizable.strings in Resources */,
 				2DD7749D20652C5700DF05D1 /* categories.json in Resources */,
 				2D7F8A842059655500D3E69D /* LaunchScreen.storyboard in Resources */,
 			);
@@ -263,6 +282,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2D26888B20692EDB0036DB46 /* SwiftGen strings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftGen strings";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $PODS_ROOT/SwiftGen/bin/swiftgen;
+		};
 		2D7F8A902059960600D3E69D /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,10 +333,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D26888820692A010036DB46 /* LoadingViewController.swift in Sources */,
+				2D26889020692FFD0036DB46 /* Strings.swift in Sources */,
 				2DD7749B20652AD800DF05D1 /* Result.swift in Sources */,
 				2DE9CE8B20642BB4001AD739 /* DataService.swift in Sources */,
 				2DE9CE82206428AC001AD739 /* Rule.swift in Sources */,
 				2D7F8A8F20598FCB00D3E69D /* RootViewController.swift in Sources */,
+				2D26888F20692FFD0036DB46 /* Images.swift in Sources */,
 				2D7F8A7F2059655500D3E69D /* AppDelegate.swift in Sources */,
 				2DE9CE8820642B37001AD739 /* Category.swift in Sources */,
 			);

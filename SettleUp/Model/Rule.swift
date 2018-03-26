@@ -15,7 +15,7 @@ struct Rule: Codable, Equatable {
     let detailedDescription: String?
     let exclusiveRuleIDs: [String]
 
-    static func ==(lhs: Rule, rhs: Rule) -> Bool {
+    static func == (lhs: Rule, rhs: Rule) -> Bool {
         return lhs.id == rhs.id
     }
 
