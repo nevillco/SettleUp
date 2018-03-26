@@ -10,29 +10,12 @@ import Foundation
 
 final class DataService {
 
+    typealias DocumentsInitializationCompletion = (Error?) -> Void
+    typealias DataFetchCompletion = (Result<[Category]>) -> Void
+
     private static let dataFileName = "categories"
     private static let dataFileExtension = "json"
 
-    private var documentsFileURL: URL {
-        return FileManager.default.documentsDirectory
-            .appendingPathComponent(DataService.dataFileName)
-            .appendingPathExtension(DataService.dataFileExtension)
-    }
-
-    private var bundleFileURL: URL {
-        guard let url = Bundle.main.url(
-            forResource: DataService.dataFileName,
-            withExtension: DataService.dataFileExtension) else {
-                fatalError("Couldn’t get the URL for the default data file")
-        }
-        return url
-    }
-
-    private var documentsFileExists: Bool {
-        return FileManager.default.fileExists(atPath: documentsFileURL.path)
-    }
-
-    typealias DataFetchCompletion = (Result<[Category]>) -> Void
     func fetchData(shouldForceInitialize: Bool = false,
                    completion: @escaping DataFetchCompletion) {
         let initializationFunction = shouldForceInitialize ?
@@ -54,8 +37,36 @@ final class DataService {
         }
     }
 
-    typealias DocumentsInitializationCompletion = (Error?) -> Void
-    private func initializeDocumentsFileIfNecessary(completion: @escaping DocumentsInitializationCompletion) {
+}
+
+// MARK: URLs
+private extension DataService {
+
+    var documentsFileURL: URL {
+        return FileManager.default.documentsDirectory
+            .appendingPathComponent(DataService.dataFileName)
+            .appendingPathExtension(DataService.dataFileExtension)
+    }
+
+    private var documentsFileExists: Bool {
+        return FileManager.default.fileExists(atPath: documentsFileURL.path)
+    }
+
+    var bundleFileURL: URL {
+        guard let url = Bundle.main.url(
+            forResource: DataService.dataFileName,
+            withExtension: DataService.dataFileExtension) else {
+                fatalError("Couldn’t get the URL for the default data file")
+        }
+        return url
+    }
+
+}
+
+// MARK: Initializing the Documents URL
+private extension DataService {
+
+    func initializeDocumentsFileIfNecessary(completion: @escaping DocumentsInitializationCompletion) {
         guard !documentsFileExists else {
             completion(nil)
             return
@@ -69,7 +80,7 @@ final class DataService {
         }
     }
 
-    private func forceInitializeDocumentsFile(completion: @escaping DocumentsInitializationCompletion) {
+    func forceInitializeDocumentsFile(completion: @escaping DocumentsInitializationCompletion) {
         if documentsFileExists {
             do {
                 try FileManager.default.removeItem(at: documentsFileURL)
@@ -90,6 +101,7 @@ final class DataService {
 
 }
 
+// MARK: FileManager Documents Directory
 private extension FileManager {
 
     var documentsDirectory: URL {
