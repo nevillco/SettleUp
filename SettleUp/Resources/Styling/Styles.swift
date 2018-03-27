@@ -10,8 +10,11 @@ import BonMot
 
 extension StringStyle {
 
-    static let h1 = StringStyle(
+    static let nav = StringStyle(
         .font(Lato.regular.ofSize(28))
+    )
+    static let h1 = StringStyle(
+        .font(Lato.regular.ofSize(24))
     )
     static let body = StringStyle(
         .font(Lato.light.ofSize(16))
