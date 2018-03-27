@@ -23,8 +23,8 @@ public extension UIViewController {
                   constrainedTo containerView: UIView,
                   animation: StateTransitionAnimation? = nil,
                   completion: (() -> Void)? = nil) {
-        assert(view.containsInHierarchy(containerView),
-               "addChild requires that containerView is in the hierarchy of self.view")
+//        assert(view.containsInHierarchy(containerView),
+//               "addChild requires that containerView is in the hierarchy of self.view")
         addChildViewController(controller)
         switch animation {
         case .none:

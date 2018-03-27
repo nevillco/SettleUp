@@ -12,7 +12,13 @@ import Reusable
 final class HomeViewController: UIViewController {
 
     fileprivate let categories: [Category]
-    fileprivate let tableView = UITableView()
+    fileprivate let tableView: UITableView = {
+        let view = UITableView()
+        view.rowHeight = UITableViewAutomaticDimension
+        view.estimatedRowHeight = 200
+        view.separatorStyle = .none
+        return view
+    }()
     fileprivate var childControllers: [Int: UIViewController] = [:]
 
     init(categories: [Category]) {
@@ -49,15 +55,17 @@ extension HomeViewController: UITableViewDataSource {
         let cell: ReuseNotifyingCell = tableView.dequeueReusableCell(for: indexPath)
         cell.delegate = self
         cell.indexPath = indexPath
+
+        let category = categories[indexPath.row]
+        let controller = CategoryCellViewController(category: category)
+        childControllers[indexPath.row] = controller
+        addChild(controller, constrainedTo: cell.contentView)
+
         return cell
     }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let category = categories[indexPath.row]
-        let controller = HomeCellViewController(category: category)
-        childControllers[indexPath.row] = controller
-        addChild(controller, constrainedTo: cell)
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//    }
 
 }
 
@@ -69,7 +77,7 @@ extension HomeViewController: ReuseNotifyingCellDelegate {
             guard let controller = childControllers[indexPath.row] else {
                 fatalError("Missing child controller for index path \(indexPath)")
             }
-            removeChild(controller, constrainedTo: cell)
+            removeChild(controller, constrainedTo: cell.contentView)
             childControllers[indexPath.row] = nil
         }
     }

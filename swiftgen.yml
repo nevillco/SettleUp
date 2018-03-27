@@ -1,8 +1,8 @@
 strings:
-    paths: SettleUp/Resources/Localizable.strings
+    paths: SettleUp/Resources/Data/Localizable.strings
     templateName: structured-swift4
     output: SettleUp/Generated/Strings.swift
 xcassets:
-    paths: SettleUp/Resources/Assets.xcassets
+    paths: SettleUp/Resources/Assets/Assets.xcassets
     templateName: swift4
     output: SettleUp/Generated/Images.swift
