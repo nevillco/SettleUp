@@ -8,24 +8,31 @@ import Foundation
 // swiftlint:disable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 internal enum L10n {
 
+  internal enum CategoryCell {
+    /// %d rules
+    internal static func ruleCount(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "Category_Cell.Rule_Count", p1)
+    }
+  }
+
   internal enum Home {
     /// SettleUp
-    internal static let title = L10n.tr("Localizable", "Home.title")
+    internal static let title = L10n.tr("Localizable", "Home.Title")
   }
 
   internal enum Loading {
 
     internal enum ErrorAlert {
       /// Cancel
-      internal static let cancel = L10n.tr("Localizable", "Loading.Error_Alert.cancel")
+      internal static let cancel = L10n.tr("Localizable", "Loading.Error_Alert.Cancel")
       /// Clear Custom Data and Retry
-      internal static let forceRetry = L10n.tr("Localizable", "Loading.Error_Alert.forceRetry")
+      internal static let forceRetry = L10n.tr("Localizable", "Loading.Error_Alert.Force_Retry")
       /// There was an error, and we weren’t able to load your SettleUp rules. Tap below to retry.
-      internal static let message = L10n.tr("Localizable", "Loading.Error_Alert.message")
+      internal static let message = L10n.tr("Localizable", "Loading.Error_Alert.Message")
       /// Retry
-      internal static let retry = L10n.tr("Localizable", "Loading.Error_Alert.retry")
+      internal static let retry = L10n.tr("Localizable", "Loading.Error_Alert.Retry")
       /// Error Loading Data
-      internal static let title = L10n.tr("Localizable", "Loading.Error_Alert.title")
+      internal static let title = L10n.tr("Localizable", "Loading.Error_Alert.Title")
     }
   }
 }

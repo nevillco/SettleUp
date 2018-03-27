@@ -6,10 +6,12 @@
   Copyright © 2018 Connor Neville. All rights reserved.
 */
 
-"Loading.Error_Alert.title" = "Error Loading Data";
-"Loading.Error_Alert.message" = "There was an error, and we weren’t able to load your SettleUp rules. Tap below to retry.";
-"Loading.Error_Alert.retry" = "Retry";
-"Loading.Error_Alert.forceRetry" = "Clear Custom Data and Retry";
-"Loading.Error_Alert.cancel" = "Cancel";
+"Loading.Error_Alert.Title" = "Error Loading Data";
+"Loading.Error_Alert.Message" = "There was an error, and we weren’t able to load your SettleUp rules. Tap below to retry.";
+"Loading.Error_Alert.Retry" = "Retry";
+"Loading.Error_Alert.Force_Retry" = "Clear Custom Data and Retry";
+"Loading.Error_Alert.Cancel" = "Cancel";
 
-"Home.title" = "SettleUp";
+"Home.Title" = "SettleUp";
+
+"Category_Cell.Rule_Count" = "%d rules";

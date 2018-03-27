@@ -27,6 +27,7 @@
 		2D8C90A1206A8DB400B0F613 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D8C9099206A8DB400B0F613 /* Lato-Hairline.ttf */; };
 		2D8C90A3206A8DB400B0F613 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D8C909B206A8DB400B0F613 /* Lato-Light.ttf */; };
 		2D8C90A6206A8E7400B0F613 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C90A5206A8E7400B0F613 /* CustomFont.swift */; };
+		2D8C90A8206A911200B0F613 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C90A7206A911200B0F613 /* Styles.swift */; };
 		2DB644DB206A7F800051CFF0 /* CategoryCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB644DA206A7F800051CFF0 /* CategoryCellViewController.swift */; };
 		2DD7749B20652AD800DF05D1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7749A20652AD800DF05D1 /* Result.swift */; };
 		2DD7749D20652C5700DF05D1 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD7749C20652C5700DF05D1 /* categories.json */; };
@@ -59,6 +60,7 @@
 		2D8C9099206A8DB400B0F613 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
 		2D8C909B206A8DB400B0F613 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		2D8C90A5206A8E7400B0F613 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		2D8C90A7206A911200B0F613 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		2DB644DA206A7F800051CFF0 /* CategoryCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellViewController.swift; sourceTree = "<group>"; };
 		2DD7749A20652AD800DF05D1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2DD7749C20652C5700DF05D1 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
@@ -174,7 +176,7 @@
 				2DB644DD206A805D0051CFF0 /* Appearance */,
 				2DB644DE206A80650051CFF0 /* Assets */,
 				2DB644DC206A80550051CFF0 /* Data */,
-				2D8C9094206A8DB400B0F613 /* Fonts */,
+				2D8C9094206A8DB400B0F613 /* Styling */,
 				2D26889320693E210036DB46 /* Sourcery */,
 			);
 			path = Resources;
@@ -190,7 +192,7 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		2D8C9094206A8DB400B0F613 /* Fonts */ = {
+		2D8C9094206A8DB400B0F613 /* Styling */ = {
 			isa = PBXGroup;
 			children = (
 				2D8C9096206A8DB400B0F613 /* Lato-Black.ttf */,
@@ -199,8 +201,9 @@
 				2D8C909B206A8DB400B0F613 /* Lato-Light.ttf */,
 				2D8C9098206A8DB400B0F613 /* Lato-Regular.ttf */,
 				2D8C90A5206A8E7400B0F613 /* CustomFont.swift */,
+				2D8C90A7206A911200B0F613 /* Styles.swift */,
 			);
-			path = Fonts;
+			path = Styling;
 			sourceTree = "<group>";
 		};
 		2DB644D9206A7F720051CFF0 /* Category Cell */ = {
@@ -470,6 +473,7 @@
 				2DE9CE82206428AC001AD739 /* Rule.swift in Sources */,
 				2D7F8A8F20598FCB00D3E69D /* RootViewController.swift in Sources */,
 				2D26888F20692FFD0036DB46 /* Images.swift in Sources */,
+				2D8C90A8206A911200B0F613 /* Styles.swift in Sources */,
 				2D7F8A7F2059655500D3E69D /* AppDelegate.swift in Sources */,
 				2D8C90A6206A8E7400B0F613 /* CustomFont.swift in Sources */,
 				2D2688A220696CEF0036DB46 /* HomeViewController.swift in Sources */,

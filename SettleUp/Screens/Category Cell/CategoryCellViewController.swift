@@ -7,6 +7,7 @@
 //
 
 import Anchorage
+import BonMot
 
 final class CategoryCellViewController: UIViewController {
 
@@ -60,9 +61,10 @@ final class CategoryCellViewController: UIViewController {
 private extension CategoryCellViewController {
 
     func configureView() {
-        titleLabel.text = category.title
-        descriptionLabel.text = category.description
-        ruleCountLabel.text = "\(category.rules.count) rules"
+        titleLabel.attributedText = category.title.styled(with: .h1)
+        descriptionLabel.attributedText = category.description.styled(with: .body)
+        ruleCountLabel.attributedText = L10n.CategoryCell.ruleCount(
+            category.rules.count).styled(with: .numeric)
 
         contentStackView.addArrangedSubview(titleLabel)
         contentStackView.addArrangedSubview(descriptionLabel)
