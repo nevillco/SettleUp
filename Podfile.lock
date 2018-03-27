@@ -10,6 +10,7 @@ PODS:
   - Sourcery (0.10.1)
   - SwiftGen (5.3.0)
   - SwiftLint (0.25.0)
+  - Then (2.3.0)
 
 DEPENDENCIES:
   - Anchorage
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - Sourcery
   - SwiftGen
   - SwiftLint
+  - Then
 
 SPEC CHECKSUMS:
   Anchorage: f4dbf32771115b8ef9c9cc4e55a002ad87711f48
@@ -28,7 +30,8 @@ SPEC CHECKSUMS:
   Sourcery: ac71ac4d490f62fd381a9f3b558f3093d91bddd5
   SwiftGen: 4379bd3640b0a212a0f6ea3c494adba385513d10
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
 
-PODFILE CHECKSUM: 5a51449ea96f798223441bf908f81f84b771996e
+PODFILE CHECKSUM: 81941b873803e9b249d53a6bd8b4431cd7201760
 
 COCOAPODS: 1.4.0

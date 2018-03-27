@@ -11,5 +11,6 @@ target 'SettleUp' do
   pod 'Sourcery'
   pod 'SwiftGen'
   pod 'SwiftLint'
+  pod 'Then'
 
 end
