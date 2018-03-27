@@ -55,6 +55,7 @@ extension HomeViewController: UITableViewDataSource {
         let cell: ReuseNotifyingCell = tableView.dequeueReusableCell(for: indexPath)
         cell.delegate = self
         cell.indexPath = indexPath
+        cell.selectionStyle = .none
 
         let category = categories[indexPath.row]
         let controller = CategoryCellViewController(category: category)
@@ -63,9 +64,6 @@ extension HomeViewController: UITableViewDataSource {
 
         return cell
     }
-
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//    }
 
 }
 

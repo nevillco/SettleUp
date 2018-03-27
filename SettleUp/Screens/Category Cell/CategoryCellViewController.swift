@@ -21,16 +21,19 @@ final class CategoryCellViewController: UIViewController {
     }()
     fileprivate let titleLabel: UILabel = {
         let label = UILabel()
+        label.font = Lato.bold.ofSize(28)
         label.setContentCompressionResistancePriority(.required, for: .vertical)
         return label
     }()
     fileprivate let descriptionLabel: UILabel = {
         let label = UILabel()
         label.setContentCompressionResistancePriority(.required, for: .vertical)
+        label.numberOfLines = 0
         return label
     }()
     fileprivate let ruleCountLabel: UILabel = {
         let label = UILabel()
+        label.font = Menlo.regular.ofSize(14)
         label.setContentCompressionResistancePriority(.required, for: .vertical)
         return label
     }()
@@ -68,7 +71,7 @@ private extension CategoryCellViewController {
         mainStackView.addArrangedSubview(supplementaryView)
         view.addSubview(mainStackView)
 
-        mainStackView.edgeAnchors == edgeAnchors
+        mainStackView.edgeAnchors == edgeAnchors + 16
     }
 
 }
