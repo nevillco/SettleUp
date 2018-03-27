@@ -8,17 +8,16 @@
 
 import Anchorage
 import Reusable
+import Then
 
 final class HomeViewController: UIViewController {
 
     fileprivate let categories: [Category]
-    fileprivate let tableView: UITableView = {
-        let view = UITableView()
-        view.rowHeight = UITableViewAutomaticDimension
-        view.estimatedRowHeight = 200
-        view.separatorStyle = .none
-        return view
-    }()
+    fileprivate let tableView = UITableView().then {
+        $0.rowHeight = UITableViewAutomaticDimension
+        $0.estimatedRowHeight = 200
+        $0.separatorStyle = .none
+    }
     fileprivate var childControllers: [Int: UIViewController] = [:]
 
     init(categories: [Category]) {

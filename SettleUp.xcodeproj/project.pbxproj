@@ -175,7 +175,6 @@
 		2D7F8A8C20598F5900D3E69D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2DB644DD206A805D0051CFF0 /* Appearance */,
 				2DB644DE206A80650051CFF0 /* Assets */,
 				2DB644DC206A80550051CFF0 /* Data */,
 				2D8C9094206A8DB400B0F613 /* Styling */,
@@ -197,11 +196,6 @@
 		2D8C9094206A8DB400B0F613 /* Styling */ = {
 			isa = PBXGroup;
 			children = (
-				2D8C9096206A8DB400B0F613 /* Lato-Black.ttf */,
-				2D8C9095206A8DB400B0F613 /* Lato-Bold.ttf */,
-				2D8C9099206A8DB400B0F613 /* Lato-Hairline.ttf */,
-				2D8C909B206A8DB400B0F613 /* Lato-Light.ttf */,
-				2D8C9098206A8DB400B0F613 /* Lato-Regular.ttf */,
 				2D8C90A5206A8E7400B0F613 /* CustomFont.swift */,
 				2D8C90A7206A911200B0F613 /* Styles.swift */,
 			);
@@ -226,16 +220,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		2DB644DD206A805D0051CFF0 /* Appearance */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Appearance;
-			sourceTree = "<group>";
-		};
 		2DB644DE206A80650051CFF0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2D8C9096206A8DB400B0F613 /* Lato-Black.ttf */,
+				2D8C9095206A8DB400B0F613 /* Lato-Bold.ttf */,
+				2D8C9099206A8DB400B0F613 /* Lato-Hairline.ttf */,
+				2D8C909B206A8DB400B0F613 /* Lato-Light.ttf */,
+				2D8C9098206A8DB400B0F613 /* Lato-Regular.ttf */,
 				2D7F8A802059655500D3E69D /* Assets.xcassets */,
 				2D7F8A822059655500D3E69D /* LaunchScreen.storyboard */,
 			);
@@ -414,7 +406,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen";
+			shellScript = $PODS_ROOT/SwiftGen/bin/swiftgen;
 		};
 		2D26889420693E2E0036DB46 /* Sourcery */ = {
 			isa = PBXShellScriptBuildPhase;

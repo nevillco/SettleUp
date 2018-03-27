@@ -16,8 +16,11 @@ extension StringStyle {
     static let body = StringStyle(
         .font(Lato.light.ofSize(16))
     )
-    static let numeric = StringStyle(
-        .font(Menlo.regular.ofSize(16))
+    static let note = StringStyle(
+        .font(Lato.light.ofSize(14))
+    )
+    static let counter = StringStyle(
+        .font(Menlo.regular.ofSize(20))
     )
 
 }

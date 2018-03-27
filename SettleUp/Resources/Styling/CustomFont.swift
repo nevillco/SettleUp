@@ -28,5 +28,6 @@ enum Lato: String, CustomFont {
 
 enum Menlo: String, CustomFont {
     case bold = "Menlo-Bold"
+    case italic = "Menlo-Italic"
     case regular = "Menlo-Regular"
 }

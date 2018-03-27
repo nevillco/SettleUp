@@ -8,34 +8,22 @@
 
 import Anchorage
 import BonMot
+import Then
 
 final class CategoryCellViewController: UIViewController {
 
     let category: Category
 
-    fileprivate let contentStackView: UIStackView = {
-        let view = UIStackView()
-        view.axis = .vertical
-        view.alignment = .leading
-        view.spacing = 8
-        return view
-    }()
-    fileprivate let titleLabel: UILabel = {
-        let label = UILabel()
-        label.setContentCompressionResistancePriority(.required, for: .vertical)
-        return label
-    }()
-    fileprivate let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.setContentCompressionResistancePriority(.required, for: .vertical)
-        label.numberOfLines = 0
-        return label
-    }()
-    fileprivate let ruleCountLabel: UILabel = {
-        let label = UILabel()
-        label.setContentCompressionResistancePriority(.required, for: .vertical)
-        return label
-    }()
+    fileprivate let contentStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.alignment = .leading
+        $0.spacing = 8
+    }
+    fileprivate let titleLabel = UILabel()
+    fileprivate let descriptionLabel = UILabel().then {
+        $0.numberOfLines = 0
+    }
+    fileprivate let ruleCountLabel = UILabel()
     fileprivate let supplementaryView = UIView()
 
     fileprivate let mainStackView = UIStackView()
@@ -62,7 +50,7 @@ private extension CategoryCellViewController {
         titleLabel.attributedText = category.title.styled(with: .h1)
         descriptionLabel.attributedText = category.description.styled(with: .body)
         ruleCountLabel.attributedText = L10n.CategoryCell.ruleCount(
-            category.rules.count).styled(with: .numeric)
+            category.rules.count).styled(with: .note)
 
         contentStackView.addArrangedSubview(titleLabel)
         contentStackView.addArrangedSubview(descriptionLabel)
