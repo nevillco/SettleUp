@@ -11,20 +11,9 @@ import UIKit
 
 final class RootViewController: UIViewController, StatefulViewController {
 
-    enum State: Equatable {
+    enum State: AutoEquatable {
         case loading
         case loaded([Category])
-
-        static func == (lhs: RootViewController.State, rhs: RootViewController.State) -> Bool {
-            switch (lhs, rhs) {
-            case (.loading, .loading):
-                return true
-            case let (.loaded(lhsCategories), .loaded(rhsCategories)):
-                return lhsCategories == rhsCategories
-            default:
-                return false
-            }
-        }
     }
     var state: State = .loading
     var currentStateManagedChildren: [UIView: UIViewController] = [:]

@@ -53,6 +53,7 @@ private extension CounterViewController {
     func configureView() {
         updateCountLabel()
         updateButtonStates()
+
         plusButton.addTarget(self, action: .plusTapped, for: .touchUpInside)
         minusButton.addTarget(self, action: .minusTapped, for: .touchUpInside)
 

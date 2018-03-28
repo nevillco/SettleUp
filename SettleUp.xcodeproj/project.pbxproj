@@ -20,6 +20,9 @@
 		2D7D4CEA206BC71B003E36DC /* UIStackView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D4CE9206BC71B003E36DC /* UIStackView+Utility.swift */; };
 		2D7D4CEC206BC7A4003E36DC /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D4CEB206BC7A4003E36DC /* UIView+Utility.swift */; };
 		2D7D4CEE206BC994003E36DC /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D4CED206BC994003E36DC /* AppConstants.swift */; };
+		2D7D4CF0206BCD1A003E36DC /* AutoEquatable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 2D7D4CEF206BCD1A003E36DC /* AutoEquatable.stencil */; };
+		2D7D4CF4206BD1DD003E36DC /* AutoEquatable+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D4CF3206BD1DD003E36DC /* AutoEquatable+Generated.swift */; };
+		2D7D4CF6206BD2C4003E36DC /* AutoEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D4CF5206BD2C4003E36DC /* AutoEquatable.swift */; };
 		2D7F8A7F2059655500D3E69D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F8A7E2059655500D3E69D /* AppDelegate.swift */; };
 		2D7F8A812059655500D3E69D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D7F8A802059655500D3E69D /* Assets.xcassets */; };
 		2D7F8A842059655500D3E69D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D7F8A822059655500D3E69D /* LaunchScreen.storyboard */; };
@@ -56,6 +59,9 @@
 		2D7D4CE9206BC71B003E36DC /* UIStackView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utility.swift"; sourceTree = "<group>"; };
 		2D7D4CEB206BC7A4003E36DC /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
 		2D7D4CED206BC994003E36DC /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		2D7D4CEF206BCD1A003E36DC /* AutoEquatable.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoEquatable.stencil; sourceTree = "<group>"; };
+		2D7D4CF3206BD1DD003E36DC /* AutoEquatable+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AutoEquatable+Generated.swift"; path = "SettleUp/Generated/AutoEquatable+Generated.swift"; sourceTree = SOURCE_ROOT; };
+		2D7D4CF5206BD2C4003E36DC /* AutoEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoEquatable.swift; sourceTree = "<group>"; };
 		2D7F8A7B2059655500D3E69D /* SettleUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettleUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D7F8A7E2059655500D3E69D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D7F8A802059655500D3E69D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				2D26889F206966390036DB46 /* Actionable+Generated.swift */,
+				2D7D4CF3206BD1DD003E36DC /* AutoEquatable+Generated.swift */,
 				2D26888D20692FFD0036DB46 /* Images.swift */,
 				2D26888E20692FFD0036DB46 /* Strings.swift */,
 			);
@@ -117,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				2D26889120693D630036DB46 /* Actionable.swifttemplate */,
+				2D7D4CEF206BCD1A003E36DC /* AutoEquatable.stencil */,
 			);
 			path = Sourcery;
 			sourceTree = "<group>";
@@ -247,8 +255,9 @@
 		2DD7749920652AC500DF05D1 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				2DD7749A20652AD800DF05D1 /* Result.swift */,
 				2D26889720693EB40036DB46 /* Actionable.swift */,
+				2D7D4CF5206BD2C4003E36DC /* AutoEquatable.swift */,
+				2DD7749A20652AD800DF05D1 /* Result.swift */,
 				2D2688AD2069833D0036DB46 /* ReuseNotifyingCell.swift */,
 				2D7D4CE9206BC71B003E36DC /* UIStackView+Utility.swift */,
 				2D7D4CEB206BC7A4003E36DC /* UIView+Utility.swift */,
@@ -347,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D8C909E206A8DB400B0F613 /* Lato-Black.ttf in Resources */,
+				2D7D4CF0206BCD1A003E36DC /* AutoEquatable.stencil in Resources */,
 				2D7F8A812059655500D3E69D /* Assets.xcassets in Resources */,
 				2D8C90A3206A8DB400B0F613 /* Lato-Light.ttf in Resources */,
 				2D8C909D206A8DB400B0F613 /* Lato-Bold.ttf in Resources */,
@@ -473,6 +483,7 @@
 				2DB644DB206A7F800051CFF0 /* CategoryViewController.swift in Sources */,
 				2D26888820692A010036DB46 /* LoadingViewController.swift in Sources */,
 				2D26889020692FFD0036DB46 /* Strings.swift in Sources */,
+				2D7D4CF6206BD2C4003E36DC /* AutoEquatable.swift in Sources */,
 				2D7D4CEE206BC994003E36DC /* AppConstants.swift in Sources */,
 				2DDA0623206A965000883A0E /* CounterViewController.swift in Sources */,
 				2DDA0625206AA02F00883A0E /* AppDelegate+Appearance.swift in Sources */,
@@ -486,6 +497,7 @@
 				2D2688A0206966390036DB46 /* Actionable+Generated.swift in Sources */,
 				2DE9CE82206428AC001AD739 /* Rule.swift in Sources */,
 				2D7F8A8F20598FCB00D3E69D /* RootViewController.swift in Sources */,
+				2D7D4CF4206BD1DD003E36DC /* AutoEquatable+Generated.swift in Sources */,
 				2D26888F20692FFD0036DB46 /* Images.swift in Sources */,
 				2D8C90A8206A911200B0F613 /* Styles.swift in Sources */,
 				2D7F8A7F2059655500D3E69D /* AppDelegate.swift in Sources */,

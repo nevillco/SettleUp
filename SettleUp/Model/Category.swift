@@ -8,15 +8,11 @@
 
 import Foundation
 
-struct Category: Codable, Equatable {
+struct Category: Codable, AutoEquatable {
 
     let id: String
     let title: String
     let description: String
     let rules: [Rule]
-
-    static func == (lhs: Category, rhs: Category) -> Bool {
-        return lhs.id == rhs.id
-    }
 
 }
