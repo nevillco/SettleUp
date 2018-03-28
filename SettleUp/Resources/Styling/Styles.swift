@@ -23,7 +23,8 @@ extension StringStyle {
         .font(Lato.light.ofSize(14))
     )
     static let counter = StringStyle(
-        .font(Menlo.regular.ofSize(20))
+        .font(Menlo.regular.ofSize(20)),
+        .alignment(.center)
     )
 
 }

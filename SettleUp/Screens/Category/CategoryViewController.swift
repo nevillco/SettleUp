@@ -1,5 +1,5 @@
 //
-//  CategoryCellViewController.swift
+//  CategoryViewController.swift
 //  SettleUp
 //
 //  Created by Connor Neville on 3/27/18.
@@ -10,26 +10,36 @@ import Anchorage
 import BonMot
 import Then
 
-final class CategoryCellViewController: UIViewController {
-
-    let category: Category
+final class CategoryViewController: UIViewController {
 
     fileprivate let contentStackView = UIStackView().then {
         $0.axis = .vertical
         $0.alignment = .leading
         $0.spacing = 8
+        $0.doNotRequireHugging(along: .horizontal)
     }
     fileprivate let titleLabel = UILabel()
     fileprivate let descriptionLabel = UILabel().then {
         $0.numberOfLines = 0
     }
     fileprivate let ruleCountLabel = UILabel()
-    fileprivate let supplementaryView = UIView()
+    fileprivate let supplementaryView = UIView().then {
+        $0.requireHugging(along: .horizontal)
+    }
 
     fileprivate let mainStackView = UIStackView()
 
-    init(category: Category) {
+    enum SupplementaryViewType {
+        case counter(CounterViewController)
+        case none
+    }
+
+    fileprivate let category: Category
+    fileprivate let supplementaryViewType: SupplementaryViewType
+
+    init(category: Category, supplementaryViewType: SupplementaryViewType) {
         self.category = category
+        self.supplementaryViewType = supplementaryViewType
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -44,7 +54,7 @@ final class CategoryCellViewController: UIViewController {
 
 }
 
-private extension CategoryCellViewController {
+private extension CategoryViewController {
 
     func configureView() {
         titleLabel.attributedText = category.title.styled(with: .h1)
@@ -52,11 +62,17 @@ private extension CategoryCellViewController {
         ruleCountLabel.attributedText = L10n.CategoryCell.ruleCount(
             category.rules.count).styled(with: .note)
 
-        contentStackView.addArrangedSubview(titleLabel)
-        contentStackView.addArrangedSubview(descriptionLabel)
-        contentStackView.addArrangedSubview(ruleCountLabel)
-        mainStackView.addArrangedSubview(contentStackView)
-        mainStackView.addArrangedSubview(supplementaryView)
+        switch supplementaryViewType {
+        case .counter(let counterVC):
+            addChild(counterVC, constrainedTo: supplementaryView)
+        case .none:
+            break
+        }
+
+        contentStackView.addArrangedSubviews(
+            titleLabel, descriptionLabel, ruleCountLabel, .flexibleSpace())
+        mainStackView.addArrangedSubviews(
+            contentStackView, supplementaryView)
         view.addSubview(mainStackView)
 
         mainStackView.edgeAnchors == edgeAnchors + 16

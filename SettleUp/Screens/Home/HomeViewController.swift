@@ -57,7 +57,9 @@ extension HomeViewController: UITableViewDataSource {
         cell.selectionStyle = .none
 
         let category = categories[indexPath.row]
-        let controller = CategoryCellViewController(category: category)
+        let controller = CategoryViewController(
+            category: category,
+            supplementaryViewType: .counter(CounterViewController()))
         childControllers[indexPath.row] = controller
         addChild(controller, constrainedTo: cell.contentView)
 
