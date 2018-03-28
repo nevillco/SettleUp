@@ -57,9 +57,11 @@ extension HomeViewController: UITableViewDataSource {
         cell.selectionStyle = .none
 
         let category = categories[indexPath.row]
+        let counter = CounterViewController(
+            minimum: 0, maximum: AppConstants.maximumRulesPerCategory)
         let controller = CategoryViewController(
             category: category,
-            supplementaryViewType: .counter(CounterViewController()))
+            supplementaryViewType: .counter(counter))
         childControllers[indexPath.row] = controller
         addChild(controller, constrainedTo: cell.contentView)
 

@@ -10,11 +10,14 @@ import Anchorage
 
 final class CounterViewController: UIViewController {
 
-    fileprivate var internalCount = 0 {
+    var count = 0 {
         didSet {
             updateCountLabel()
+            updateButtonStates()
         }
     }
+    fileprivate let minimum: Int
+    fileprivate let maximum: Int
 
     fileprivate let stackView = UIStackView().then {
         $0.axis = .vertical
@@ -28,6 +31,16 @@ final class CounterViewController: UIViewController {
         $0.setAttributedTitle("-".styled(with: .counter), for: .normal)
     }
 
+    init(minimum: Int, maximum: Int) {
+        self.minimum = minimum
+        self.maximum = maximum
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -39,8 +52,9 @@ private extension CounterViewController {
 
     func configureView() {
         updateCountLabel()
-        plusButton.addTarget(self, action: #selector(plusTapped), for: .touchUpInside)
-        minusButton.addTarget(self, action: #selector(minusTapped), for: .touchUpInside)
+        updateButtonStates()
+        plusButton.addTarget(self, action: .plusTapped, for: .touchUpInside)
+        minusButton.addTarget(self, action: .minusTapped, for: .touchUpInside)
 
         stackView.addArrangedSubviews(plusButton, countLabel, minusButton)
         view.addSubview(stackView)
@@ -49,19 +63,31 @@ private extension CounterViewController {
     }
 
     func updateCountLabel() {
-        countLabel.attributedText = "\(internalCount)".styled(with: .counter)
+        countLabel.attributedText = "\(count)".styled(with: .counter)
     }
+
+    func updateButtonStates() {
+        plusButton.isEnabled = count < maximum
+        minusButton.isEnabled = count > minimum
+    }
+
+}
+
+fileprivate extension Selector {
+
+    static let plusTapped = #selector(CounterViewController.plusTapped)
+    static let minusTapped = #selector(CounterViewController.minusTapped)
 
 }
 
 private extension CounterViewController {
 
     @objc func plusTapped() {
-        print("+")
+        count += 1
     }
 
     @objc func minusTapped() {
-        print("-")
+        count -= 1
     }
 
 }
