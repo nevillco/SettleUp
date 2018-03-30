@@ -2,10 +2,11 @@
  {
  "id": "799DCA46-64FA-4D0C-9EB0-DB616C12B3D1",
  "title": "Power Up Rules",
- "description": "Rules that generally make players stronger and make the game go faster.",
+ "description": "Rules that generally make players stronger and make the game speed up.",
  "rules": [
 
- ]
+ ],
+ "isCustom": false
  },
  {
  "id": "30344867-918C-41E8-8696-4DF0FB03A843",
@@ -13,14 +14,25 @@
  "description": "Rules that generally make players weaker and amp up the friendly competition.",
  "rules": [
 
- ]
+ ],
+ "isCustom": false
  },
  {
  "id": "F6DB5FD1-8BBA-4BA4-B660-E8908C0A318D",
  "title": "Drinking Rules",
- "description": "You know what these are.",
+ "description": "These rules are pretty self-explanatory.",
  "rules": [
 
- ]
+ ],
+ "isCustom": false
+ },
+ {
+ "id": "C9905208-B589-4335-8D48-70742F3A33A9",
+ "title": "Custom Rules",
+ "description": "Create your own rules to play with!",
+ "rules": [
+
+ ],
+ "isCustom": true
  }
 ]

@@ -32,6 +32,7 @@ guard lhs.id == rhs.id else { return false }
 guard lhs.title == rhs.title else { return false }
 guard lhs.description == rhs.description else { return false }
 guard lhs.rules == rhs.rules else { return false }
+guard lhs.isCustom == rhs.isCustom else { return false }
 return true
 }
 // MARK: - Rule AutoEquatable
