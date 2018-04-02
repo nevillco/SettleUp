@@ -14,5 +14,6 @@ struct Rule: Codable, AutoEquatable {
     let description: String
     let detailedDescription: String?
     let exclusiveRuleIDs: [String]
+    let tags: [Tag]
 
 }

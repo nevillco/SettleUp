@@ -42,6 +42,7 @@ guard lhs.id == rhs.id else { return false }
 guard lhs.description == rhs.description else { return false }
 guard compareOptionals(lhs: lhs.detailedDescription, rhs: rhs.detailedDescription, compare: ==) else { return false }
 guard lhs.exclusiveRuleIDs == rhs.exclusiveRuleIDs else { return false }
+guard lhs.tags == rhs.tags else { return false }
 return true
 }
 
@@ -54,6 +55,51 @@ case (.loading, .loading):
 return true
 case (.loaded(let lhs), .loaded(let rhs)):
 return lhs == rhs
+default: return false
+}
+}
+// MARK: - Tag AutoEquatable
+extension Tag: Equatable {}
+internal func == (lhs: Tag, rhs: Tag) -> Bool {
+switch (lhs, rhs) {
+case (.roads, .roads):
+return true
+case (.settlements, .settlements):
+return true
+case (.cities, .cities):
+return true
+case (.devCards, .devCards):
+return true
+case (.knights, .knights):
+return true
+case (.greenDevCards, .greenDevCards):
+return true
+case (.yellowDevCards, .yellowDevCards):
+return true
+case (.robber, .robber):
+return true
+case (.rollNumber, .rollNumber):
+return true
+case (.victoryPointNumber, .victoryPointNumber):
+return true
+case (.drink, .drink):
+return true
+case (.finishYourDrink, .finishYourDrink):
+return true
+case (.longestRoad, .longestRoad):
+return true
+case (.largestArmy, .largestArmy):
+return true
+case (.portConversion, .portConversion):
+return true
+case (.desert, .desert):
+return true
+case (.coast, .coast):
+return true
+case (.cardDumping, .cardDumping):
+return true
+case (.prediction, .prediction):
+return true
 default: return false
 }
 }

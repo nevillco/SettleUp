@@ -6,7 +6,7 @@
  "rules": [
 
  ],
- "isCustom": false
+ "isCustom": false,
  },
  {
  "id": "30344867-918C-41E8-8696-4DF0FB03A843",
@@ -15,7 +15,7 @@
  "rules": [
 
  ],
- "isCustom": false
+ "isCustom": false,
  },
  {
  "id": "F6DB5FD1-8BBA-4BA4-B660-E8908C0A318D",
@@ -24,7 +24,7 @@
  "rules": [
 
  ],
- "isCustom": false
+ "isCustom": false,
  },
  {
  "id": "C9905208-B589-4335-8D48-70742F3A33A9",
@@ -33,6 +33,6 @@
  "rules": [
 
  ],
- "isCustom": true
+ "isCustom": true,
  }
 ]
