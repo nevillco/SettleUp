@@ -76,9 +76,11 @@ case (.greenDevCards, .greenDevCards):
 return true
 case (.yellowDevCards, .yellowDevCards):
 return true
-case (.robber, .robber):
+case (.stealing, .stealing):
 return true
 case (.rollNumber, .rollNumber):
+return true
+case (.tileNumber, .tileNumber):
 return true
 case (.victoryPointNumber, .victoryPointNumber):
 return true
@@ -97,6 +99,8 @@ return true
 case (.desert, .desert):
 return true
 case (.coast, .coast):
+return true
+case (.wildCard, .wildCard):
 return true
 case (.cardDumping, .cardDumping):
 return true
