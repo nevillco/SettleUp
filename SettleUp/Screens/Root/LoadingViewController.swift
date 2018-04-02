@@ -37,7 +37,7 @@ private extension LoadingViewController {
         case .success(let categories):
             notify(.didFetch(categories))
         case .failure(let error):
-            self.handleFailure(error)
+            handleFailure(error)
         }
     }
 
