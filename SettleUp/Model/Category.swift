@@ -10,7 +10,7 @@ import Foundation
 
 struct Category: Codable, AutoEquatable {
 
-    let id: String
+    let id: Int
     let title: String
     let description: String
     let rules: [Rule]

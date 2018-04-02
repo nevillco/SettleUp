@@ -10,10 +10,10 @@ import Foundation
 
 struct Rule: Codable, AutoEquatable {
 
-    let id: String
+    let id: Int
     let description: String
-    let detailedDescription: String?
-    let exclusiveRuleIDs: [String]
+    let notes: String?
+    let excludedRuleIDs: [Int]
     let tags: [Tag]
 
 }

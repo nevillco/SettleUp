@@ -40,8 +40,8 @@ extension Rule: Equatable {}
 internal func == (lhs: Rule, rhs: Rule) -> Bool {
 guard lhs.id == rhs.id else { return false }
 guard lhs.description == rhs.description else { return false }
-guard compareOptionals(lhs: lhs.detailedDescription, rhs: rhs.detailedDescription, compare: ==) else { return false }
-guard lhs.exclusiveRuleIDs == rhs.exclusiveRuleIDs else { return false }
+guard compareOptionals(lhs: lhs.notes, rhs: rhs.notes, compare: ==) else { return false }
+guard lhs.excludedRuleIDs == rhs.excludedRuleIDs else { return false }
 guard lhs.tags == rhs.tags else { return false }
 return true
 }
@@ -92,6 +92,8 @@ case (.largestArmy, .largestArmy):
 return true
 case (.portConversion, .portConversion):
 return true
+case (.resourcePickup, .resourcePickup):
+return true
 case (.desert, .desert):
 return true
 case (.coast, .coast):
@@ -99,6 +101,8 @@ return true
 case (.cardDumping, .cardDumping):
 return true
 case (.prediction, .prediction):
+return true
+case (.initialSettlements, .initialSettlements):
 return true
 default: return false
 }

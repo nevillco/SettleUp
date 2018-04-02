@@ -25,9 +25,11 @@ enum Tag: String, Codable, AutoEquatable {
     case longestRoad = "Longest Road"
     case largestArmy = "Largest Army"
     case portConversion = "Port Conversion"
+    case resourcePickup = "Resource Pickup"
     case desert = "Desert"
     case coast = "Coast"
     case cardDumping = "Card Dumping"
     case prediction = "Prediction"
+    case initialSettlements = "Initial Settlements"
 
 }
