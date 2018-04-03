@@ -42,6 +42,7 @@ private extension LoadingViewController {
     }
 
     func handleFailure(_ error: Error) {
+        print(error as NSError)
         typealias Strings = L10n.Loading.ErrorAlert
         let alert = UIAlertController(title: Strings.title, message: Strings.message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: Strings.retry, style: .default, handler: { _ in
