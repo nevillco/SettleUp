@@ -70,8 +70,6 @@ case (.cities, .cities):
 return true
 case (.devCards, .devCards):
 return true
-case (.knights, .knights):
-return true
 case (.greenDevCards, .greenDevCards):
 return true
 case (.yellowDevCards, .yellowDevCards):

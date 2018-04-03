@@ -14,7 +14,6 @@ enum Tag: String, Codable, AutoEquatable {
     case settlements = "Settlements"
     case cities = "Cities"
     case devCards = "Development Cards"
-    case knights = "Knights"
     case greenDevCards = "Green Development Cards"
     case yellowDevCards = "Yellow Development Cards"
     case stealing = "Stealing"
