@@ -32,5 +32,6 @@ enum Tag: String, Codable, AutoEquatable {
     case cardDumping = "Card Dumping"
     case prediction = "Prediction"
     case initialSettlements = "Initial Settlements"
+    case realWorld = "Real World"
 
 }

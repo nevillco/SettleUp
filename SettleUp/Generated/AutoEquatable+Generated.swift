@@ -106,6 +106,8 @@ case (.prediction, .prediction):
 return true
 case (.initialSettlements, .initialSettlements):
 return true
+case (.realWorld, .realWorld):
+return true
 default: return false
 }
 }
