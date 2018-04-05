@@ -26,5 +26,8 @@ extension StringStyle {
         .font(Menlo.regular.ofSize(20)),
         .alignment(.center)
     )
+    static let cta = StringStyle(
+        .font(Lato.regular.ofSize(36))
+    )
 
 }

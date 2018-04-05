@@ -37,6 +37,7 @@
 		2DB644DB206A7F800051CFF0 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB644DA206A7F800051CFF0 /* CategoryViewController.swift */; };
 		2DD17E6420725B1B00DDAE29 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E6320725B1B00DDAE29 /* Tag.swift */; };
 		2DD17E7A2074187D00DDAE29 /* SettleUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E792074187D00DDAE29 /* SettleUpTests.swift */; };
+		2DD17E822076598C00DDAE29 /* AddCustomRuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E812076598C00DDAE29 /* AddCustomRuleViewController.swift */; };
 		2DD7749B20652AD800DF05D1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7749A20652AD800DF05D1 /* Result.swift */; };
 		2DD7749D20652C5700DF05D1 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD7749C20652C5700DF05D1 /* categories.json */; };
 		2DDA0623206A965000883A0E /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDA0622206A965000883A0E /* CounterViewController.swift */; };
@@ -92,6 +93,7 @@
 		2DD17E772074187C00DDAE29 /* SettleUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SettleUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD17E792074187D00DDAE29 /* SettleUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleUpTests.swift; sourceTree = "<group>"; };
 		2DD17E7B2074187D00DDAE29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DD17E812076598C00DDAE29 /* AddCustomRuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomRuleViewController.swift; sourceTree = "<group>"; };
 		2DD7749A20652AD800DF05D1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2DD7749C20652C5700DF05D1 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		2DDA0622206A965000883A0E /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			children = (
 				2DB644DA206A7F800051CFF0 /* CategoryViewController.swift */,
 				2DDA0622206A965000883A0E /* CounterViewController.swift */,
+				2DD17E812076598C00DDAE29 /* AddCustomRuleViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				2D26889E20695D190036DB46 /* LoadedViewController.swift in Sources */,
 				2D26889820693EB40036DB46 /* Actionable.swift in Sources */,
 				2DE9CE8B20642BB4001AD739 /* DataService.swift in Sources */,
+				2DD17E822076598C00DDAE29 /* AddCustomRuleViewController.swift in Sources */,
 				2D2688AE2069833D0036DB46 /* ReuseNotifyingCell.swift in Sources */,
 				2D7D4CEA206BC71B003E36DC /* UIStackView+Utility.swift in Sources */,
 				2D2688A0206966390036DB46 /* Actionable+Generated.swift in Sources */,

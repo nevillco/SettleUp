@@ -31,6 +31,7 @@ final class CategoryViewController: UIViewController {
 
     enum SupplementaryViewType {
         case counter(CounterViewController)
+        case addCustomRule(AddCustomRuleViewController)
         case none
     }
 
@@ -63,8 +64,10 @@ private extension CategoryViewController {
             category.rules.count).styled(with: .note)
 
         switch supplementaryViewType {
-        case .counter(let counterVC):
-            addChild(counterVC, constrainedTo: supplementaryView)
+        case let .counter(supplementaryVC):
+            addChild((supplementaryVC), constrainedTo: supplementaryView)
+        case let .addCustomRule(supplementaryVC):
+            addChild((supplementaryVC), constrainedTo: supplementaryView)
         case .none:
             break
         }
@@ -75,6 +78,7 @@ private extension CategoryViewController {
             contentStackView, supplementaryView)
         view.addSubview(mainStackView)
 
+        supplementaryView.widthAnchor == 80
         mainStackView.edgeAnchors == edgeAnchors + 16
     }
 

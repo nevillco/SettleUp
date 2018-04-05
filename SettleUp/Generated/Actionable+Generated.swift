@@ -5,6 +5,22 @@
 
 //swiftlint:disable:previous vertical_whitespace
 
+// MARK: - AddCustomRuleViewController
+protocol AddCustomRuleViewControllerDelegate: class {
+func addCustomRuleViewController(_ vc: AddCustomRuleViewController, didNotify action: AddCustomRuleViewController.Action)
+}
+
+extension AddCustomRuleViewController {
+
+typealias ActionType = Action
+typealias Delegate = AddCustomRuleViewControllerDelegate
+
+func notify(_ action: ActionType) {
+delegate?.addCustomRuleViewController(self, didNotify: action)
+}
+
+}
+
 // MARK: - LoadingViewController
 protocol LoadingViewControllerDelegate: class {
 func loadingViewController(_ vc: LoadingViewController, didNotify action: LoadingViewController.Action)
