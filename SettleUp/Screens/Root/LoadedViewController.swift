@@ -18,6 +18,7 @@ final class LoadedViewController: UIViewController {
         let homeController = HomeViewController(categories: categories)
         self.navController = UINavigationController(rootViewController: homeController)
         super.init(nibName: nil, bundle: nil)
+        navController.delegate = self
         homeController.delegate = self
     }
 
@@ -40,6 +41,15 @@ extension LoadedViewController: HomeViewControllerDelegate {
             let results = ResultsViewController(categories: categories)
             navController.pushViewController(results, animated: true)
         }
+    }
+
+}
+
+extension LoadedViewController: UINavigationControllerDelegate {
+
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        viewController.navigationItem.backBarButtonItem = backBarButtonItem
     }
 
 }
