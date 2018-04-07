@@ -12,7 +12,7 @@ import Then
 
 final class HomeViewController: UIViewController {
 
-    fileprivate var selections: [CategorySelection]
+    fileprivate var selections: [Selection]
     fileprivate let stackView = UIStackView().then {
         $0.axis = .vertical
         $0.spacing = 8
@@ -106,7 +106,7 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: Actionable {
 
     enum Action {
-        case didTapPlay(selections: [CategorySelection])
+        case didTapPlay(selections: [Selection])
     }
 
 }
@@ -154,7 +154,7 @@ extension HomeViewController: CounterViewControllerDelegate {
             countOperation = { count in return count - 1 }
         }
 
-        let isCorrectSelection: (CategorySelection) -> Bool = { selection in
+        let isCorrectSelection: (Selection) -> Bool = { selection in
             return selection.category == modifiedCategory
         }
         guard let existingSelectionIndex = selections.index(where: isCorrectSelection) else {

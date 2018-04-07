@@ -10,9 +10,9 @@ import UIKit
 
 final class ResultsViewController: UIViewController {
 
-    fileprivate let results: [RuleResult]
+    fileprivate let results: [SelectionResult]
 
-    init(selections: [CategorySelection]) {
+    init(selections: [Selection]) {
         self.results = ResultService(selections: selections).generateResults()
         print(results.map({ ($0.category.title, $0.rules.map({ $0.id })) }))
         super.init(nibName: nil, bundle: nil)
