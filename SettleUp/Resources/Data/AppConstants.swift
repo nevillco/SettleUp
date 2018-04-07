@@ -12,6 +12,7 @@ struct AppConstants {
 
     private init() { }
 
+    static let maximumGenerationRetries = 10
     static let maximumRulesPerCategory = 5
 
 }
