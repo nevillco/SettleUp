@@ -13,5 +13,6 @@
 "Loading.Error_Alert.Cancel" = "Cancel";
 
 "Home.Title" = "SettleUp";
+"Home.Intro" = "Select the rules you want to add and press 'Play' <b>before starting your game of Settlers of Catan</b>.";
 
 "Category_Cell.Rule_Count" = "%d rules";

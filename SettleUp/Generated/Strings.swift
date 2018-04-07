@@ -16,6 +16,8 @@ internal enum L10n {
   }
 
   internal enum Home {
+    /// Select the rules you want to add and press 'Play' <b>before starting your game of Settlers of Catan</b>.
+    internal static let intro = L10n.tr("Localizable", "Home.Intro")
     /// SettleUp
     internal static let title = L10n.tr("Localizable", "Home.Title")
   }

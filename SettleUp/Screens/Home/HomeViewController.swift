@@ -13,6 +13,16 @@ import Then
 final class HomeViewController: UIViewController {
 
     fileprivate let categories: [Category]
+    fileprivate let stackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 8
+        $0.isLayoutMarginsRelativeArrangement = true
+        $0.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+    }
+    fileprivate let introLabel = UILabel().then {
+        $0.numberOfLines = 0
+        $0.attributedText = L10n.Home.intro.styled(with: .body)
+    }
     fileprivate let tableView = UITableView().then {
         $0.rowHeight = UITableViewAutomaticDimension
         $0.estimatedRowHeight = 200
@@ -36,8 +46,11 @@ final class HomeViewController: UIViewController {
         tableView.register(cellType: ReuseNotifyingCell.self)
         tableView.delegate = self
         tableView.dataSource = self
-        view.addSubview(tableView)
-        tableView.edgeAnchors == edgeAnchors
+
+        stackView.addArrangedSubviews(introLabel, tableView)
+        view.addSubview(stackView)
+
+        stackView.edgeAnchors == edgeAnchors
     }
 
 }

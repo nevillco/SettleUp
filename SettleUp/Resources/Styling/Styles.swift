@@ -17,7 +17,11 @@ extension StringStyle {
         .font(Lato.regular.ofSize(24))
     )
     static let body = StringStyle(
-        .font(Lato.light.ofSize(16))
+        .font(Lato.light.ofSize(16)),
+        .xmlRules([.style("b", StringStyle(
+            .font(Lato.regular.ofSize(16))
+        ))
+            ])
     )
     static let note = StringStyle(
         .font(Lato.light.ofSize(14))
