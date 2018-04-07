@@ -12,7 +12,7 @@ import Then
 
 final class HomeViewController: UIViewController {
 
-    fileprivate let categories: [Category]
+    fileprivate var selections: [CategorySelection]
     fileprivate let stackView = UIStackView().then {
         $0.axis = .vertical
         $0.spacing = 8
@@ -36,7 +36,7 @@ final class HomeViewController: UIViewController {
     weak var delegate: Delegate?
 
     init(categories: [Category]) {
-        self.categories = categories
+        self.selections = categories.map({ (category: $0, count: 0) })
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -68,7 +68,7 @@ extension HomeViewController: UITableViewDelegate { }
 extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return selections.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -77,7 +77,7 @@ extension HomeViewController: UITableViewDataSource {
         cell.indexPath = indexPath
         cell.selectionStyle = .none
 
-        let category = categories[indexPath.row]
+        let category = selections[indexPath.row].category
         let supplementaryView: CategoryViewController.SupplementaryViewType
         switch category.isCustom {
         case true:
@@ -86,7 +86,10 @@ extension HomeViewController: UITableViewDataSource {
             supplementaryView = .addCustomRule(supplementaryVC)
         case false:
             let supplementaryVC = CounterViewController(
-                minimum: 0, maximum: AppConstants.maximumRulesPerCategory)
+                category: category,
+                minimum: 0,
+                maximum: AppConstants.maximumRulesPerCategory)
+            supplementaryVC.delegate = self
             supplementaryView = .counter(supplementaryVC)
         }
         let controller = CategoryViewController(
@@ -103,7 +106,21 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: Actionable {
 
     enum Action {
-        case didTapPlay
+        case didTapPlay(selections: [CategorySelection])
+    }
+
+}
+
+fileprivate extension Selector {
+
+    static let playTapped = #selector(HomeViewController.playTapped)
+
+}
+
+private extension HomeViewController {
+
+    @objc func playTapped() {
+        notify(.didTapPlay(selections: selections))
     }
 
 }
@@ -123,16 +140,30 @@ extension HomeViewController: ReuseNotifyingCellDelegate {
 
 }
 
-fileprivate extension Selector {
+extension HomeViewController: CounterViewControllerDelegate {
 
-    static let playTapped = #selector(HomeViewController.playTapped)
+    func counterViewController(_ vc: CounterViewController, didNotify action: CounterViewController.Action) {
+        let modifiedCategory: Category
+        let countOperation: (Int) -> Int
+        switch action {
+        case let .didIncrement(category):
+            modifiedCategory = category
+            countOperation = { count in return count + 1 }
+        case let .didDecrement(category):
+            modifiedCategory = category
+            countOperation = { count in return count - 1 }
+        }
 
-}
-
-private extension HomeViewController {
-
-    @objc func playTapped() {
-        notify(.didTapPlay)
+        let isCorrectSelection: (CategorySelection) -> Bool = { selection in
+            return selection.category == modifiedCategory
+        }
+        guard let existingSelectionIndex = selections.index(where: isCorrectSelection) else {
+            fatalError("No selection found for category named \(modifiedCategory.title)")
+        }
+        let existingSelection = selections[existingSelectionIndex]
+        let newCount = countOperation(existingSelection.count)
+        let newSelection = (category: existingSelection.category, count: newCount)
+        selections[existingSelectionIndex] = newSelection
     }
 
 }

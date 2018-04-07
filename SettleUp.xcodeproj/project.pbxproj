@@ -39,6 +39,7 @@
 		2DD17E7A2074187D00DDAE29 /* SettleUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E792074187D00DDAE29 /* SettleUpTests.swift */; };
 		2DD17E822076598C00DDAE29 /* AddCustomRuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E812076598C00DDAE29 /* AddCustomRuleViewController.swift */; };
 		2DD17E8520791B8500DDAE29 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E8420791B8500DDAE29 /* ResultsViewController.swift */; };
+		2DD17E8720791ECE00DDAE29 /* ResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E8620791ECE00DDAE29 /* ResultService.swift */; };
 		2DD7749B20652AD800DF05D1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7749A20652AD800DF05D1 /* Result.swift */; };
 		2DD7749D20652C5700DF05D1 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD7749C20652C5700DF05D1 /* categories.json */; };
 		2DDA0623206A965000883A0E /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDA0622206A965000883A0E /* CounterViewController.swift */; };
@@ -96,6 +97,7 @@
 		2DD17E7B2074187D00DDAE29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DD17E812076598C00DDAE29 /* AddCustomRuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomRuleViewController.swift; sourceTree = "<group>"; };
 		2DD17E8420791B8500DDAE29 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		2DD17E8620791ECE00DDAE29 /* ResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultService.swift; sourceTree = "<group>"; };
 		2DD7749A20652AD800DF05D1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2DD7749C20652C5700DF05D1 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		2DDA0622206A965000883A0E /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				2DE9CE8A20642BB4001AD739 /* DataService.swift */,
+				2DD17E8620791ECE00DDAE29 /* ResultService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 			files = (
 				2DB644DB206A7F800051CFF0 /* CategoryViewController.swift in Sources */,
 				2D26888820692A010036DB46 /* LoadingViewController.swift in Sources */,
+				2DD17E8720791ECE00DDAE29 /* ResultService.swift in Sources */,
 				2D26889020692FFD0036DB46 /* Strings.swift in Sources */,
 				2D7D4CF6206BD2C4003E36DC /* AutoEquatable.swift in Sources */,
 				2D7D4CEE206BC994003E36DC /* AppConstants.swift in Sources */,

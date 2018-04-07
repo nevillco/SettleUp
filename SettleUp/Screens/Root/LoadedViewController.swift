@@ -37,8 +37,8 @@ extension LoadedViewController: HomeViewControllerDelegate {
 
     func homeViewController(_ vc: HomeViewController, didNotify action: HomeViewController.Action) {
         switch action {
-        case .didTapPlay:
-            let results = ResultsViewController(categories: categories)
+        case let .didTapPlay(selections):
+            let results = ResultsViewController(selections: selections)
             navController.pushViewController(results, animated: true)
         }
     }

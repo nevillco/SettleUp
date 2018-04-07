@@ -10,6 +10,7 @@ import Anchorage
 
 final class CounterViewController: UIViewController {
 
+    fileprivate let category: Category
     var count = 0 {
         didSet {
             updateCountLabel()
@@ -31,7 +32,10 @@ final class CounterViewController: UIViewController {
         $0.setAttributedTitle("-".styled(with: .counter), for: .normal)
     }
 
-    init(minimum: Int, maximum: Int) {
+    weak var delegate: Delegate?
+
+    init(category: Category, minimum: Int, maximum: Int) {
+        self.category = category
         self.minimum = minimum
         self.maximum = maximum
         super.init(nibName: nil, bundle: nil)
@@ -74,6 +78,15 @@ private extension CounterViewController {
 
 }
 
+extension CounterViewController: Actionable {
+
+    enum Action {
+        case didIncrement(Category)
+        case didDecrement(Category)
+    }
+
+}
+
 fileprivate extension Selector {
 
     static let plusTapped = #selector(CounterViewController.plusTapped)
@@ -85,10 +98,12 @@ private extension CounterViewController {
 
     @objc func plusTapped() {
         count += 1
+        notify(.didIncrement(category))
     }
 
     @objc func minusTapped() {
         count -= 1
+        notify(.didDecrement(category))
     }
 
 }

@@ -21,6 +21,22 @@ delegate?.addCustomRuleViewController(self, didNotify: action)
 
 }
 
+// MARK: - CounterViewController
+protocol CounterViewControllerDelegate: class {
+func counterViewController(_ vc: CounterViewController, didNotify action: CounterViewController.Action)
+}
+
+extension CounterViewController {
+
+typealias ActionType = Action
+typealias Delegate = CounterViewControllerDelegate
+
+func notify(_ action: ActionType) {
+delegate?.counterViewController(self, didNotify: action)
+}
+
+}
+
 // MARK: - HomeViewController
 protocol HomeViewControllerDelegate: class {
 func homeViewController(_ vc: HomeViewController, didNotify action: HomeViewController.Action)
