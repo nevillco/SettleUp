@@ -29,6 +29,11 @@ final class HomeViewController: UIViewController {
         $0.separatorStyle = .none
     }
     fileprivate var childControllers: [Int: UIViewController] = [:]
+    fileprivate let playButton = UIButton().then {
+        $0.setAttributedTitle(L10n.Home.play.styled(with: .cta), for: .normal)
+    }
+
+    weak var delegate: Delegate?
 
     init(categories: [Category]) {
         self.categories = categories
@@ -41,13 +46,16 @@ final class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         title = L10n.Home.title
 
         tableView.register(cellType: ReuseNotifyingCell.self)
         tableView.delegate = self
         tableView.dataSource = self
 
-        stackView.addArrangedSubviews(introLabel, tableView)
+        playButton.addTarget(self, action: .playTapped, for: .touchUpInside)
+
+        stackView.addArrangedSubviews(introLabel, tableView, playButton)
         view.addSubview(stackView)
 
         stackView.edgeAnchors == edgeAnchors
@@ -92,6 +100,14 @@ extension HomeViewController: UITableViewDataSource {
 
 }
 
+extension HomeViewController: Actionable {
+
+    enum Action {
+        case didTapPlay
+    }
+
+}
+
 extension HomeViewController: ReuseNotifyingCellDelegate {
 
     func reuseNotifyingCell(_ cell: ReuseNotifyingCell, didNotify action: ReuseNotifyingCell.Action) {
@@ -103,6 +119,20 @@ extension HomeViewController: ReuseNotifyingCellDelegate {
             removeChild(controller, constrainedTo: cell.contentView)
             childControllers[indexPath.row] = nil
         }
+    }
+
+}
+
+fileprivate extension Selector {
+
+    static let playTapped = #selector(HomeViewController.playTapped)
+
+}
+
+private extension HomeViewController {
+
+    @objc func playTapped() {
+        notify(.didTapPlay)
     }
 
 }

@@ -21,6 +21,22 @@ delegate?.addCustomRuleViewController(self, didNotify: action)
 
 }
 
+// MARK: - HomeViewController
+protocol HomeViewControllerDelegate: class {
+func homeViewController(_ vc: HomeViewController, didNotify action: HomeViewController.Action)
+}
+
+extension HomeViewController {
+
+typealias ActionType = Action
+typealias Delegate = HomeViewControllerDelegate
+
+func notify(_ action: ActionType) {
+delegate?.homeViewController(self, didNotify: action)
+}
+
+}
+
 // MARK: - LoadingViewController
 protocol LoadingViewControllerDelegate: class {
 func loadingViewController(_ vc: LoadingViewController, didNotify action: LoadingViewController.Action)

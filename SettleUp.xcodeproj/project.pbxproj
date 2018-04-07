@@ -38,6 +38,7 @@
 		2DD17E6420725B1B00DDAE29 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E6320725B1B00DDAE29 /* Tag.swift */; };
 		2DD17E7A2074187D00DDAE29 /* SettleUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E792074187D00DDAE29 /* SettleUpTests.swift */; };
 		2DD17E822076598C00DDAE29 /* AddCustomRuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E812076598C00DDAE29 /* AddCustomRuleViewController.swift */; };
+		2DD17E8520791B8500DDAE29 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E8420791B8500DDAE29 /* ResultsViewController.swift */; };
 		2DD7749B20652AD800DF05D1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7749A20652AD800DF05D1 /* Result.swift */; };
 		2DD7749D20652C5700DF05D1 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD7749C20652C5700DF05D1 /* categories.json */; };
 		2DDA0623206A965000883A0E /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDA0622206A965000883A0E /* CounterViewController.swift */; };
@@ -94,6 +95,7 @@
 		2DD17E792074187D00DDAE29 /* SettleUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleUpTests.swift; sourceTree = "<group>"; };
 		2DD17E7B2074187D00DDAE29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DD17E812076598C00DDAE29 /* AddCustomRuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomRuleViewController.swift; sourceTree = "<group>"; };
+		2DD17E8420791B8500DDAE29 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		2DD7749A20652AD800DF05D1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2DD7749C20652C5700DF05D1 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		2DDA0622206A965000883A0E /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				2DB644D9206A7F720051CFF0 /* Category */,
 				2D2688A520696F2F0036DB46 /* Home */,
+				2DD17E8320791B4B00DDAE29 /* Results */,
 				2D2688A420696F0F0036DB46 /* Root */,
 			);
 			path = Screens;
@@ -287,6 +290,14 @@
 				2DD17E7B2074187D00DDAE29 /* Info.plist */,
 			);
 			path = SettleUpTests;
+			sourceTree = "<group>";
+		};
+		2DD17E8320791B4B00DDAE29 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				2DD17E8420791B8500DDAE29 /* ResultsViewController.swift */,
+			);
+			path = Results;
 			sourceTree = "<group>";
 		};
 		2DD7749920652AC500DF05D1 /* Utility */ = {
@@ -572,6 +583,7 @@
 				2D26888F20692FFD0036DB46 /* Images.swift in Sources */,
 				2D8C90A8206A911200B0F613 /* Styles.swift in Sources */,
 				2D7F8A7F2059655500D3E69D /* AppDelegate.swift in Sources */,
+				2DD17E8520791B8500DDAE29 /* ResultsViewController.swift in Sources */,
 				2D8C90A6206A8E7400B0F613 /* CustomFont.swift in Sources */,
 				2D2688A220696CEF0036DB46 /* HomeViewController.swift in Sources */,
 				2DE9CE8820642B37001AD739 /* Category.swift in Sources */,

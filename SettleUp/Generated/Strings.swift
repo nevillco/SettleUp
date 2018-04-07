@@ -18,6 +18,8 @@ internal enum L10n {
   internal enum Home {
     /// Select the rules you want to add and press 'Play' <b>before starting your game of Settlers of Catan</b>.
     internal static let intro = L10n.tr("Localizable", "Home.Intro")
+    /// Play
+    internal static let play = L10n.tr("Localizable", "Home.Play")
     /// SettleUp
     internal static let title = L10n.tr("Localizable", "Home.Title")
   }
@@ -36,6 +38,11 @@ internal enum L10n {
       /// Error Loading Data
       internal static let title = L10n.tr("Localizable", "Loading.Error_Alert.Title")
     }
+  }
+
+  internal enum Results {
+    /// Results
+    internal static let title = L10n.tr("Localizable", "Results.Title")
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name

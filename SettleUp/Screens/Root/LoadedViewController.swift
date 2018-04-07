@@ -11,14 +11,14 @@ import BonMot
 final class LoadedViewController: UIViewController {
 
     fileprivate let categories: [Category]
-    fileprivate let homeController: HomeViewController
     fileprivate let navController: UINavigationController
 
     init(categories: [Category]) {
         self.categories = categories
-        self.homeController = HomeViewController(categories: categories)
+        let homeController = HomeViewController(categories: categories)
         self.navController = UINavigationController(rootViewController: homeController)
         super.init(nibName: nil, bundle: nil)
+        homeController.delegate = self
     }
 
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
@@ -28,6 +28,18 @@ final class LoadedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addChild(navController)
+    }
+
+}
+
+extension LoadedViewController: HomeViewControllerDelegate {
+
+    func homeViewController(_ vc: HomeViewController, didNotify action: HomeViewController.Action) {
+        switch action {
+        case .didTapPlay:
+            let results = ResultsViewController(categories: categories)
+            navController.pushViewController(results, animated: true)
+        }
     }
 
 }
