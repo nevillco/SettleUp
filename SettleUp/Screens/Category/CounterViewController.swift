@@ -10,16 +10,6 @@ import Anchorage
 
 final class CounterViewController: UIViewController {
 
-    fileprivate let category: Category
-    var count = 0 {
-        didSet {
-            updateCountLabel()
-            updateButtonStates()
-        }
-    }
-    fileprivate let minimum: Int
-    fileprivate let maximum: Int
-
     fileprivate let stackView = UIStackView().then {
         $0.axis = .vertical
         $0.spacing = 8
@@ -32,6 +22,15 @@ final class CounterViewController: UIViewController {
         $0.setAttributedTitle("-".styled(with: .counter), for: .normal)
     }
 
+    fileprivate let category: Category
+    var count = 0 {
+        didSet {
+            updateCountLabel()
+            updateButtonStates()
+        }
+    }
+    fileprivate let minimum: Int
+    fileprivate let maximum: Int
     weak var delegate: Delegate?
 
     init(category: Category, minimum: Int, maximum: Int) {

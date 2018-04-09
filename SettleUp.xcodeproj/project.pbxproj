@@ -42,6 +42,7 @@
 		2DD17E8720791ECE00DDAE29 /* ResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E8620791ECE00DDAE29 /* ResultService.swift */; };
 		2DD17E892079259800DDAE29 /* Array+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E882079259800DDAE29 /* Array+Utility.swift */; };
 		2DD17E8B2079271000DDAE29 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E8A2079271000DDAE29 /* Identifiable.swift */; };
+		2DD17E8E20795DEF00DDAE29 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD17E8D20795DEF00DDAE29 /* ResultCell.swift */; };
 		2DD7749B20652AD800DF05D1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7749A20652AD800DF05D1 /* Result.swift */; };
 		2DD7749D20652C5700DF05D1 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD7749C20652C5700DF05D1 /* categories.json */; };
 		2DDA0623206A965000883A0E /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDA0622206A965000883A0E /* CounterViewController.swift */; };
@@ -102,6 +103,7 @@
 		2DD17E8620791ECE00DDAE29 /* ResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultService.swift; sourceTree = "<group>"; };
 		2DD17E882079259800DDAE29 /* Array+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utility.swift"; sourceTree = "<group>"; };
 		2DD17E8A2079271000DDAE29 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		2DD17E8D20795DEF00DDAE29 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		2DD7749A20652AD800DF05D1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2DD7749C20652C5700DF05D1 /* categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		2DDA0622206A965000883A0E /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				2DD17E8420791B8500DDAE29 /* ResultsViewController.swift */,
+				2DD17E8D20795DEF00DDAE29 /* ResultCell.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				2D7D4CEE206BC994003E36DC /* AppConstants.swift in Sources */,
 				2DDA0623206A965000883A0E /* CounterViewController.swift in Sources */,
 				2DDA0625206AA02F00883A0E /* AppDelegate+Appearance.swift in Sources */,
+				2DD17E8E20795DEF00DDAE29 /* ResultCell.swift in Sources */,
 				2D7D4CEC206BC7A4003E36DC /* UIView+Utility.swift in Sources */,
 				2DD7749B20652AD800DF05D1 /* Result.swift in Sources */,
 				2DD17E6420725B1B00DDAE29 /* Tag.swift in Sources */,

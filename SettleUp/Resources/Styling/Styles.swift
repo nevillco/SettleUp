@@ -33,5 +33,8 @@ extension StringStyle {
     static let cta = StringStyle(
         .font(Lato.regular.ofSize(36))
     )
+    static let smallButton = StringStyle(
+        .font(Lato.bold.ofSize(16))
+    )
 
 }

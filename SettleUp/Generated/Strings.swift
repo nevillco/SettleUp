@@ -44,6 +44,11 @@ internal enum L10n {
     /// Results
     internal static let title = L10n.tr("Localizable", "Results.Title")
   }
+
+  internal enum RuleCell {
+    /// Additional Info
+    internal static let additionalInfo = L10n.tr("Localizable", "Rule_Cell.Additional_Info")
+  }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 

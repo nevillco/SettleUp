@@ -12,7 +12,6 @@ import Then
 
 final class HomeViewController: UIViewController {
 
-    fileprivate var selections: [Selection]
     fileprivate let stackView = UIStackView().then {
         $0.axis = .vertical
         $0.spacing = 8
@@ -33,6 +32,7 @@ final class HomeViewController: UIViewController {
         $0.setAttributedTitle(L10n.Home.play.styled(with: .cta), for: .normal)
     }
 
+    fileprivate var selections: [Selection]
     weak var delegate: Delegate?
 
     init(categories: [Category]) {

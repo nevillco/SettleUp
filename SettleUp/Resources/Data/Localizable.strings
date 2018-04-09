@@ -19,3 +19,5 @@
 "Results.Title" = "Results";
 
 "Category_Cell.Rule_Count" = "%d rules";
+
+"Rule_Cell.Additional_Info" = "Additional Info";
