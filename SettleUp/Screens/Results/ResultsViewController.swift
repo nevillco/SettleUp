@@ -30,7 +30,7 @@ final class ResultsViewController: UIViewController {
     fileprivate let results: [SelectionResult]
 
     init(selections: [Selection]) {
-        self.results = ResultService(selections: selections).generateResults()
+        results = ResultService().generateResults(from: selections)
         super.init(nibName: nil, bundle: nil)
     }
 

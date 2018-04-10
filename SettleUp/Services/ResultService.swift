@@ -8,23 +8,13 @@
 
 import Foundation
 
-typealias Selection = (category: Category, count: Int)
-typealias SelectionResult = (category: Category, rules: [Rule])
 final class ResultService {
-
-    typealias RuleGenerationCompletion = ([Rule]) -> Void
-
-    fileprivate let selections: [Selection]
-
-    init(selections: [Selection]) {
-        self.selections = selections
-    }
 
 }
 
 extension ResultService {
 
-    func generateResults() -> [SelectionResult] {
+    func generateResults(from selections: [Selection]) -> [SelectionResult] {
         var excludedRuleIDs = Set<Int>()
         let isIncludedRule: (Rule) -> Bool = { rule in
             return !excludedRuleIDs.contains(rule.id)
@@ -43,7 +33,8 @@ extension ResultService {
                     excludedRuleIDs.insert(ruleToExclude)
                 }
             }
-            results.append((category: selection.category, rules: selectedRules))
+            let result = SelectionResult(category: selection.category, rules: selectedRules)
+            results.append(result)
         }
         return results
     }

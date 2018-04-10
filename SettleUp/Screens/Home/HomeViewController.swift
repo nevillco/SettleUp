@@ -36,7 +36,7 @@ final class HomeViewController: UIViewController {
     weak var delegate: Delegate?
 
     init(categories: [Category]) {
-        self.selections = categories.map({ (category: $0, count: 0) })
+        self.selections = categories.map({ Selection(category: $0, count: 0) })
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -162,7 +162,7 @@ extension HomeViewController: CounterViewControllerDelegate {
         }
         let existingSelection = selections[existingSelectionIndex]
         let newCount = countOperation(existingSelection.count)
-        let newSelection = (category: existingSelection.category, count: newCount)
+        let newSelection = Selection(category: existingSelection.category, count: newCount)
         selections[existingSelectionIndex] = newSelection
     }
 

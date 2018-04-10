@@ -45,6 +45,20 @@ guard lhs.excludedRuleIDs == rhs.excludedRuleIDs else { return false }
 guard lhs.tags == rhs.tags else { return false }
 return true
 }
+// MARK: - Selection AutoEquatable
+extension Selection: Equatable {}
+internal func == (lhs: Selection, rhs: Selection) -> Bool {
+guard lhs.category == rhs.category else { return false }
+guard lhs.count == rhs.count else { return false }
+return true
+}
+// MARK: - SelectionResult AutoEquatable
+extension SelectionResult: Equatable {}
+internal func == (lhs: SelectionResult, rhs: SelectionResult) -> Bool {
+guard lhs.category == rhs.category else { return false }
+guard lhs.rules == rhs.rules else { return false }
+return true
+}
 
 // MARK: - AutoEquatable for Enums
 // MARK: - RootViewController.State AutoEquatable
