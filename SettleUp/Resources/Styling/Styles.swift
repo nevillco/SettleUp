@@ -31,7 +31,8 @@ extension StringStyle {
         .alignment(.center)
     )
     static let cta = StringStyle(
-        .font(Lato.regular.ofSize(36))
+        .font(Lato.regular.ofSize(36)),
+        .color(.brandAqua)
     )
     static let smallButton = StringStyle(
         .font(Lato.bold.ofSize(16))
