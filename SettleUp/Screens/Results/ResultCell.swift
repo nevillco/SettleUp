@@ -13,7 +13,7 @@ import Then
 
 final class ResultCell: UITableViewCell, Reusable {
 
-    fileprivate let contentStackView = UIStackView().then {
+    fileprivate let mainStackView = UIStackView().then {
         $0.axis = .vertical
         $0.alignment = .leading
         $0.spacing = 8
@@ -30,8 +30,6 @@ final class ResultCell: UITableViewCell, Reusable {
     fileprivate let supplementaryView = UIView().then {
         $0.requireHugging(along: .horizontal)
     }
-
-    fileprivate let mainStackView = UIStackView()
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -57,13 +55,10 @@ private extension ResultCell {
     func configureView() {
         selectionStyle = .none
 
-        contentStackView.addArrangedSubviews(
-            descriptionLabel, additionalInfoButton, .flexibleSpace())
         mainStackView.addArrangedSubviews(
-            contentStackView, supplementaryView)
+            descriptionLabel, additionalInfoButton, .flexibleSpace())
         contentView.addSubview(mainStackView)
 
-        supplementaryView.widthAnchor == 80
         mainStackView.edgeAnchors == contentView.edgeAnchors + 16
     }
 

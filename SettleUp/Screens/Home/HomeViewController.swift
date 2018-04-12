@@ -27,9 +27,10 @@ final class HomeViewController: UIViewController {
         $0.estimatedRowHeight = 200
         $0.separatorStyle = .none
     }
-    fileprivate var childControllers: [Int: UIViewController] = [:]
-    fileprivate let playButton = UIButton().then {
-        $0.setAttributedTitle(L10n.Home.play.styled(with: .cta), for: .normal)
+    fileprivate var childControllers: [IndexPath: UIViewController] = [:]
+    fileprivate let playButton = UIButton(type: .system).then {
+        $0.setAttributedTitle(
+            L10n.Home.play.styled(with: .cta), for: .normal)
     }
 
     fileprivate var selections: [Selection]
@@ -95,7 +96,7 @@ extension HomeViewController: UITableViewDataSource {
         let controller = CategoryViewController(
             category: category,
             supplementaryViewType: supplementaryView)
-        childControllers[indexPath.row] = controller
+        childControllers[indexPath] = controller
         addChild(controller, constrainedTo: cell.contentView)
 
         return cell
@@ -130,11 +131,11 @@ extension HomeViewController: ReuseNotifyingCellDelegate {
     func reuseNotifyingCell(_ cell: ReuseNotifyingCell, didNotify action: ReuseNotifyingCell.Action) {
         switch action {
         case .preparedForReuse(let indexPath):
-            guard let controller = childControllers[indexPath.row] else {
+            guard let controller = childControllers[indexPath] else {
                 fatalError("Missing child controller for index path \(indexPath)")
             }
             removeChild(controller, constrainedTo: cell.contentView)
-            childControllers[indexPath.row] = nil
+            childControllers[indexPath] = nil
         }
     }
 

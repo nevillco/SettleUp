@@ -22,8 +22,9 @@ final class ResultsViewController: UIViewController {
         $0.separatorStyle = .none
     }
     fileprivate var childControllers: [IndexPath: UIViewController] = [:]
-    fileprivate let playAgainButton = UIButton().then {
-        $0.setAttributedTitle(L10n.Results.playAgain.styled(with: .cta), for: .normal)
+    fileprivate let playAgainButton = UIButton(type: .system).then {
+        $0.setAttributedTitle(
+            L10n.Results.playAgain.styled(with: .cta), for: .normal)
     }
 
     fileprivate let selections: [Selection]

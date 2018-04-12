@@ -16,12 +16,12 @@ extension StringStyle {
     static let h1 = StringStyle(
         .font(Lato.regular.ofSize(24))
     )
+    private static let boldBody = StringStyle(
+        .font(Lato.regular.ofSize(16))
+    )
     static let body = StringStyle(
         .font(Lato.light.ofSize(16)),
-        .xmlRules([.style("b", StringStyle(
-            .font(Lato.regular.ofSize(16))
-        ))
-            ])
+        .xmlRules([.style("b", boldBody)])
     )
     static let note = StringStyle(
         .font(Lato.light.ofSize(14))
