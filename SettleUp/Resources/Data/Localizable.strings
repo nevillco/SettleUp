@@ -17,6 +17,7 @@
 "Home.Play" = "Play";
 
 "Results.Title" = "Results";
+"Results.Play_Again" = "Play Again";
 
 "Category_Cell.Rule_Count" = "%d rules";
 

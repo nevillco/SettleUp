@@ -23,14 +23,16 @@ final class ResultsViewController: UIViewController {
     }
     fileprivate var childControllers: [IndexPath: UIViewController] = [:]
     fileprivate let playAgainButton = UIButton().then {
-        $0.setAttributedTitle(L10n.Home.play.styled(with: .cta), for: .normal)
+        $0.setAttributedTitle(L10n.Results.playAgain.styled(with: .cta), for: .normal)
     }
 
-    weak var delegate: Delegate?
-    fileprivate let results: [SelectionResult]
+    fileprivate let selections: [Selection]
+    fileprivate let service = ResultService()
+    fileprivate var results: [SelectionResult]
 
     init(selections: [Selection]) {
-        results = ResultService().generateResults(from: selections)
+        self.selections = selections
+        results = service.generateResults(from: selections)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -75,14 +77,6 @@ extension ResultsViewController: UITableViewDataSource {
 
 }
 
-extension ResultsViewController: Actionable {
-
-    enum Action {
-        case didTapPlayAgain(results: [SelectionResult])
-    }
-
-}
-
 fileprivate extension Selector {
 
     static let playAgainTapped = #selector(ResultsViewController.playAgainTapped)
@@ -92,7 +86,8 @@ fileprivate extension Selector {
 private extension ResultsViewController {
 
     @objc func playAgainTapped() {
-        notify(.didTapPlayAgain(results: results))
+        self.results = service.generateResults(from: selections)
+        tableView.reloadData()
     }
 
 }

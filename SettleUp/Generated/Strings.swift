@@ -41,6 +41,8 @@ internal enum L10n {
   }
 
   internal enum Results {
+    /// Play Again
+    internal static let playAgain = L10n.tr("Localizable", "Results.Play_Again")
     /// Results
     internal static let title = L10n.tr("Localizable", "Results.Title")
   }

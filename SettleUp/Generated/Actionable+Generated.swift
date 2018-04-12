@@ -69,22 +69,6 @@ delegate?.loadingViewController(self, didNotify: action)
 
 }
 
-// MARK: - ResultsViewController
-protocol ResultsViewControllerDelegate: class {
-func resultsViewController(_ vc: ResultsViewController, didNotify action: ResultsViewController.Action)
-}
-
-extension ResultsViewController {
-
-typealias ActionType = Action
-typealias Delegate = ResultsViewControllerDelegate
-
-func notify(_ action: ActionType) {
-delegate?.resultsViewController(self, didNotify: action)
-}
-
-}
-
 // MARK: - ReuseNotifyingCell
 protocol ReuseNotifyingCellDelegate: class {
 func reuseNotifyingCell(_ cell: ReuseNotifyingCell, didNotify action: ReuseNotifyingCell.Action)

@@ -28,10 +28,8 @@ extension ResultService {
                 let randomRule = selectableRules[randomIndex]
                 selectedRules.append(randomRule)
                 selectableRules.remove(at: randomIndex)
-                let rulesToExclude = [randomRule.id] + randomRule.excludedRuleIDs
-                for ruleToExclude in rulesToExclude {
-                    excludedRuleIDs.insert(ruleToExclude)
-                }
+                excludedRuleIDs.insert(randomRule.id)
+                excludedRuleIDs.formUnion(randomRule.excludedRuleIDs)
             }
             let result = SelectionResult(category: selection.category, rules: selectedRules)
             results.append(result)
